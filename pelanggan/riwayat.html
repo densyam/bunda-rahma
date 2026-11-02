@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#290a04" />
+    <meta
+      name="description"
+      content="Tampilan Catering Bunda Rahma — menu harian, paket langganan, dan dashboard admin."
+    />
+    <title>Riwayat Pesanan · Bunda Rahma</title>
+    <link rel="icon" href="../assets/images/logo.png" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body class="customer">
+    <header class="site-header">
+      <nav class="nav wrap" aria-label="Navigasi utama">
+        <a class="brand" href="../pelanggan/index.html">
+          <img
+            src="../assets/images/logo.png"
+            alt="Logo kucing Catering Bunda Rahma"
+          />
+          <span>
+            CATERING
+            <br />
+            <b>BUNDA RAHMA</b>
+          </span>
+        </a>
+        <button
+          class="mobile-toggle"
+          aria-label="Buka navigasi"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <div class="navlinks">
+          <a href="../pelanggan/index.html#tentang">Tentang</a>
+          <a class="" href="../pelanggan/menu.html">Menu</a>
+          <a class="" href="../pelanggan/index.html#langganan">Langganan</a>
+          <a class="" href="../pelanggan/index.html#ulasan">Ulasan</a>
+          <details class="account">
+            <summary class="btn">Akun</summary>
+            <div class="account-menu">
+              <small>Nadia Putri</small>
+              <a href="../pelanggan/riwayat.html">Riwayat pesanan</a>
+              <a href="../pelanggan/jadwal-menu.html">Jadwal Menu</a>
+              <a href="../publik/index.html" data-logout>Keluar</a>
+            </div>
+          </details>
+        </div>
+      </nav>
+    </header>
+    <main class="wrap">
+      <div class="page-head">
+        <h1>Riwayat Pesanan</h1>
+        <p>
+          Menu berbeda setiap hari. Beri rating untuk tiap pengantaran yang
+          sudah selesai.
+        </p>
+      </div>
+      <div class="toolbar">
+        <span class="badge">Pesanan contoh</span>
+        <div class="button-row">
+          <select
+            class="inline-filter"
+            id="history-month"
+            aria-label="Bulan pesanan"
+          >
+            <option value="2026-11">November 2026</option>
+            <option value="2026-10">Oktober 2026</option>
+          </select>
+          <select
+            class="inline-filter"
+            id="history-status"
+            aria-label="Status pesanan"
+          >
+            <option>Semua</option>
+            <option>Selesai</option>
+            <option>Diproses</option>
+          </select>
+        </div>
+      </div>
+      <div class="alert" id="order-notice" hidden></div>
+      <div class="panel history-banner">
+        <div>
+          <h3>Paket 30 Day</h3>
+          <small>Senin–Jumat · 11.00–13.00 WIB · Mulai 1 Nov 2026</small>
+        </div>
+        <div>
+          <small>7 dari 30 pengantaran</small>
+          <div class="progress"><i style="width: 23%"></i></div>
+        </div>
+      </div>
+      <div id="history-list">
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Tanggal</th>
+                <th>Menu Hari Ini</th>
+                <th>Status</th>
+                <th>Rating</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <b>9 Nov 2026</b>
+                  <small>Pengantaran ke-7</small>
+                </td>
+                <td>
+                  <b>Ayam Bakar Bumbu Rujak</b>
+                  <small>Sayur asem · Tempe goreng · Sambal terasi</small>
+                </td>
+                <td><span class="badge orange">Diproses</span></td>
+                <td>
+                  <button class="btn small" data-review="7" disabled>
+                    Beri Rating
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <b>6 Nov 2026</b>
+                  <small>Pengantaran ke-6</small>
+                </td>
+                <td>
+                  <b>Rendang Daging</b>
+                  <small>Tumis buncis · Kerupuk · Sambal hijau</small>
+                </td>
+                <td><span class="badge green">Selesai</span></td>
+                <td>
+                  <button class="btn small" data-review="6">Beri Rating</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <b>5 Nov 2026</b>
+                  <small>Pengantaran ke-5</small>
+                </td>
+                <td>
+                  <b>Ikan Bakar Kecap</b>
+                  <small>Lalapan · Tahu goreng · Sambal terasi</small>
+                </td>
+                <td><span class="badge green">Selesai</span></td>
+                <td>
+                  <button class="btn small" data-review="5">Beri Rating</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <b>4 Nov 2026</b>
+                  <small>Pengantaran ke-4</small>
+                </td>
+                <td>
+                  <b>Soto Ayam Kuning</b>
+                  <small>Perkedel · Telur rebus · Emping</small>
+                </td>
+                <td><span class="badge green">Selesai</span></td>
+                <td>
+                  <button class="btn small" data-review="4">Beri Rating</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <b>3 Nov 2026</b>
+                  <small>Pengantaran ke-3</small>
+                </td>
+                <td>
+                  <b>Gulai Ayam</b>
+                  <small>Capcay · Tempe orek · Kerupuk</small>
+                </td>
+                <td><span class="badge green">Selesai</span></td>
+                <td>
+                  <button class="btn small" data-review="3">Beri Rating</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <b>2 Nov 2026</b>
+                  <small>Pengantaran ke-2</small>
+                </td>
+                <td>
+                  <b>Pepes Ikan Kembung</b>
+                  <small>Urap sayur · Tahu goreng · Sambal</small>
+                </td>
+                <td><span class="badge green">Selesai</span></td>
+                <td>
+                  <button class="btn small" data-review="2">Beri Rating</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <b>1 Nov 2026</b>
+                  <small>Pengantaran ke-1</small>
+                </td>
+                <td>
+                  <b>Ayam Goreng</b>
+                  <small>Nasi putih · Lalapan · Sambal</small>
+                </td>
+                <td><span class="badge green">Selesai</span></td>
+                <td>
+                  <button class="btn small" data-review="1">Beri Rating</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <small style="margin-right: auto">7 pengantaran · data contoh</small>
+          <button data-history-page="1" class="active">1</button>
+          <button data-history-page="2" class="">2</button>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="wrap">
+        <span>© 2026 Catering Bunda Rahma</span>
+        <span>Enak, lezat, dan tepat waktu.</span>
+        <a href="../admin/login.html">Login admin ↗</a>
+      </div>
+    </footer>
+
+    <template id="preview-review-1" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Beri Rating Menu</h3>
+        <p style="font-size: 12px">
+          Bagikan pengalamanmu untuk menu pada pengantaran ini.
+        </p>
+        <div class="panel review-order-summary">
+          <small>MENU YANG DIULAS</small>
+          <h3>Ayam Goreng</h3>
+          <small>Pengantaran #1 · 1 Nov 2026</small>
+          <br />
+          <span class="badge green">Selesai</span>
+        </div>
+        <form id="review-form" data-order="1">
+          <input type="hidden" name="rating" value="5" />
+          <div class="stars-picker" role="group" aria-label="Pilih rating">
+            <button
+              type="button"
+              data-star="1"
+              class="on"
+              aria-label="1 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="2"
+              class="on"
+              aria-label="2 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="3"
+              class="on"
+              aria-label="3 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="4"
+              class="on"
+              aria-label="4 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="5"
+              class="on"
+              aria-label="5 bintang"
+              aria-pressed="true"
+            >
+              ★
+            </button>
+          </div>
+          <div class="field">
+            <label for="review-text">
+              Ulasan
+              <small style="float: right">Opsional</small>
+            </label>
+            <textarea
+              id="review-text"
+              name="text"
+              maxlength="300"
+              placeholder="Bagaimana rasa dan porsi menu ini?"
+            ></textarea>
+            <small id="review-count">0/300</small>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">
+              Kirim Ulasan
+            </button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-review-2" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Beri Rating Menu</h3>
+        <p style="font-size: 12px">
+          Bagikan pengalamanmu untuk menu pada pengantaran ini.
+        </p>
+        <div class="panel review-order-summary">
+          <small>MENU YANG DIULAS</small>
+          <h3>Pepes Ikan Kembung</h3>
+          <small>Pengantaran #2 · 2 Nov 2026</small>
+          <br />
+          <span class="badge green">Selesai</span>
+        </div>
+        <form id="review-form" data-order="2">
+          <input type="hidden" name="rating" value="5" />
+          <div class="stars-picker" role="group" aria-label="Pilih rating">
+            <button
+              type="button"
+              data-star="1"
+              class="on"
+              aria-label="1 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="2"
+              class="on"
+              aria-label="2 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="3"
+              class="on"
+              aria-label="3 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="4"
+              class="on"
+              aria-label="4 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="5"
+              class="on"
+              aria-label="5 bintang"
+              aria-pressed="true"
+            >
+              ★
+            </button>
+          </div>
+          <div class="field">
+            <label for="review-text">
+              Ulasan
+              <small style="float: right">Opsional</small>
+            </label>
+            <textarea
+              id="review-text"
+              name="text"
+              maxlength="300"
+              placeholder="Bagaimana rasa dan porsi menu ini?"
+            ></textarea>
+            <small id="review-count">0/300</small>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">
+              Kirim Ulasan
+            </button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-review-3" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Beri Rating Menu</h3>
+        <p style="font-size: 12px">
+          Bagikan pengalamanmu untuk menu pada pengantaran ini.
+        </p>
+        <div class="panel review-order-summary">
+          <small>MENU YANG DIULAS</small>
+          <h3>Gulai Ayam</h3>
+          <small>Pengantaran #3 · 3 Nov 2026</small>
+          <br />
+          <span class="badge green">Selesai</span>
+        </div>
+        <form id="review-form" data-order="3">
+          <input type="hidden" name="rating" value="5" />
+          <div class="stars-picker" role="group" aria-label="Pilih rating">
+            <button
+              type="button"
+              data-star="1"
+              class="on"
+              aria-label="1 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="2"
+              class="on"
+              aria-label="2 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="3"
+              class="on"
+              aria-label="3 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="4"
+              class="on"
+              aria-label="4 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="5"
+              class="on"
+              aria-label="5 bintang"
+              aria-pressed="true"
+            >
+              ★
+            </button>
+          </div>
+          <div class="field">
+            <label for="review-text">
+              Ulasan
+              <small style="float: right">Opsional</small>
+            </label>
+            <textarea
+              id="review-text"
+              name="text"
+              maxlength="300"
+              placeholder="Bagaimana rasa dan porsi menu ini?"
+            ></textarea>
+            <small id="review-count">0/300</small>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">
+              Kirim Ulasan
+            </button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-review-4" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Beri Rating Menu</h3>
+        <p style="font-size: 12px">
+          Bagikan pengalamanmu untuk menu pada pengantaran ini.
+        </p>
+        <div class="panel review-order-summary">
+          <small>MENU YANG DIULAS</small>
+          <h3>Soto Ayam Kuning</h3>
+          <small>Pengantaran #4 · 4 Nov 2026</small>
+          <br />
+          <span class="badge green">Selesai</span>
+        </div>
+        <form id="review-form" data-order="4">
+          <input type="hidden" name="rating" value="5" />
+          <div class="stars-picker" role="group" aria-label="Pilih rating">
+            <button
+              type="button"
+              data-star="1"
+              class="on"
+              aria-label="1 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="2"
+              class="on"
+              aria-label="2 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="3"
+              class="on"
+              aria-label="3 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="4"
+              class="on"
+              aria-label="4 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="5"
+              class="on"
+              aria-label="5 bintang"
+              aria-pressed="true"
+            >
+              ★
+            </button>
+          </div>
+          <div class="field">
+            <label for="review-text">
+              Ulasan
+              <small style="float: right">Opsional</small>
+            </label>
+            <textarea
+              id="review-text"
+              name="text"
+              maxlength="300"
+              placeholder="Bagaimana rasa dan porsi menu ini?"
+            ></textarea>
+            <small id="review-count">0/300</small>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">
+              Kirim Ulasan
+            </button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-review-5" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Beri Rating Menu</h3>
+        <p style="font-size: 12px">
+          Bagikan pengalamanmu untuk menu pada pengantaran ini.
+        </p>
+        <div class="panel review-order-summary">
+          <small>MENU YANG DIULAS</small>
+          <h3>Ikan Bakar Kecap</h3>
+          <small>Pengantaran #5 · 5 Nov 2026</small>
+          <br />
+          <span class="badge green">Selesai</span>
+        </div>
+        <form id="review-form" data-order="5">
+          <input type="hidden" name="rating" value="5" />
+          <div class="stars-picker" role="group" aria-label="Pilih rating">
+            <button
+              type="button"
+              data-star="1"
+              class="on"
+              aria-label="1 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="2"
+              class="on"
+              aria-label="2 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="3"
+              class="on"
+              aria-label="3 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="4"
+              class="on"
+              aria-label="4 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="5"
+              class="on"
+              aria-label="5 bintang"
+              aria-pressed="true"
+            >
+              ★
+            </button>
+          </div>
+          <div class="field">
+            <label for="review-text">
+              Ulasan
+              <small style="float: right">Opsional</small>
+            </label>
+            <textarea
+              id="review-text"
+              name="text"
+              maxlength="300"
+              placeholder="Bagaimana rasa dan porsi menu ini?"
+            ></textarea>
+            <small id="review-count">0/300</small>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">
+              Kirim Ulasan
+            </button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-review-6" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Beri Rating Menu</h3>
+        <p style="font-size: 12px">
+          Bagikan pengalamanmu untuk menu pada pengantaran ini.
+        </p>
+        <div class="panel review-order-summary">
+          <small>MENU YANG DIULAS</small>
+          <h3>Rendang Daging</h3>
+          <small>Pengantaran #6 · 6 Nov 2026</small>
+          <br />
+          <span class="badge green">Selesai</span>
+        </div>
+        <form id="review-form" data-order="6">
+          <input type="hidden" name="rating" value="5" />
+          <div class="stars-picker" role="group" aria-label="Pilih rating">
+            <button
+              type="button"
+              data-star="1"
+              class="on"
+              aria-label="1 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="2"
+              class="on"
+              aria-label="2 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="3"
+              class="on"
+              aria-label="3 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="4"
+              class="on"
+              aria-label="4 bintang"
+              aria-pressed="false"
+            >
+              ★
+            </button>
+            <button
+              type="button"
+              data-star="5"
+              class="on"
+              aria-label="5 bintang"
+              aria-pressed="true"
+            >
+              ★
+            </button>
+          </div>
+          <div class="field">
+            <label for="review-text">
+              Ulasan
+              <small style="float: right">Opsional</small>
+            </label>
+            <textarea
+              id="review-text"
+              name="text"
+              maxlength="300"
+              placeholder="Bagaimana rasa dan porsi menu ini?"
+            ></textarea>
+            <small id="review-count">0/300</small>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">
+              Kirim Ulasan
+            </button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-login-required" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Lihat halaman pelanggan</h3>
+        <p>
+          Gunakan tombol sementara untuk membuka tampilan pelanggan atau admin.
+        </p>
+        <div class="preview-login-actions">
+          <a class="btn wide" href="../pelanggan/index.html">
+            Buka Halaman Pelanggan
+          </a>
+          <a class="btn secondary wide" href="../admin/index.html">
+            Buka Dashboard Admin
+          </a>
+        </div>
+      </div>
+    </template>
+    <template id="preview-forgot" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Lupa Password</h3>
+        <p>
+          Ini hanya tampilan. Kamu bisa membuka halaman pelanggan atau admin
+          melalui tombol sementara pada halaman login.
+        </p>
+      </div>
+    </template>
+    <div id="modal-root"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="../assets/js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#290a04" />
+    <meta
+      name="description"
+      content="Tampilan Catering Bunda Rahma — menu harian, paket langganan, dan dashboard admin."
+    />
+    <title>Catering Bunda Rahma · Bunda Rahma</title>
+    <link rel="icon" href="../assets/images/logo.png" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body class="public">
+    <header class="site-header">
+      <nav class="nav wrap" aria-label="Navigasi utama">
+        <a class="brand" href="../publik/index.html">
+          <img
+            src="../assets/images/logo.png"
+            alt="Logo kucing Catering Bunda Rahma"
+          />
+          <span>
+            CATERING
+            <br />
+            <b>BUNDA RAHMA</b>
+          </span>
+        </a>
+        <button
+          class="mobile-toggle"
+          aria-label="Buka navigasi"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <div class="navlinks">
+          <a href="#tentang">Tentang</a>
+          <a class="" href="#menu">Menu</a>
+          <a class="" href="#langganan">Langganan</a>
+          <a class="" href="#ulasan">Ulasan</a>
+          <a class="btn" href="../publik/login.html">Masuk</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="wrap hero">
+        <div>
+          <div class="eyebrow">Catering Bunda Rahma</div>
+          <h1>
+            Enak, Lezat, Dan
+            <br />
+            Tepat Waktu
+          </h1>
+          <p>
+            Makanan rumahan yang lezat dan bergizi, disiapkan dengan sepenuh
+            hati. Temani kesibukanmu dengan menu pilihan yang siap diantar
+            setiap hari. Pilih menu favorit dan paket yang sesuai, lalu nikmati
+            waktu makan tanpa repot memikirkan masakan.
+          </p>
+          <a class="btn" href="#langganan">Berlangganan</a>
+        </div>
+        <img
+          class="hero-image"
+          src="../assets/images/hero.png"
+          alt="Hidangan steak, kentang, dan sayuran segar"
+        />
+      </section>
+      <section class="section wrap" id="tentang">
+        <div class="about">
+          <div>
+            <h2>Tentang Kami</h2>
+            <p>
+              Catering Bunda Rahma hadir dengan komitmen menyediakan makanan
+              yang tidak hanya enak, tetapi juga sehat, higienis, dan tepat
+              waktu. Cocok untuk mahasiswa atau pekerja yang membutuhkan makanan
+              harian.
+              <br><br>
+              Dari makan siang di sela aktivitas hingga makan malam setelah hari
+              yang panjang, pilih paket 1, 7, atau 30 hari sesuai kebutuhanmu.
+              Atur jadwal pengiriman dan tentukan menu untuk besok, semuanya
+              dari satu tempat.
+            </p>
+          </div>
+          <img
+            src="../assets/images/logo.png"
+            alt="Catering Bunda Rahma — logo kucing koki"
+          />
+        </div>
+      </section>
+      <section class="section wrap" id="menu">
+        <div class="section-heading"><h2>Menu Unggulan</h2></div>
+        <div class="featured-grid">
+          <a class="featured" href="../publik/menu.html">
+            <img
+              src="../assets/images/mie-ayam.jpg"
+              alt="Mie Ayam"
+              loading="lazy"
+            />
+            <h3>Mie Ayam</h3>
+            <p>Menu rumahan, penuh rasa</p>
+          </a>
+          <a class="featured" href="../publik/menu.html">
+            <img
+              src="../assets/images/ayam-goreng.jpg"
+              alt="Ayam Goreng"
+              loading="lazy"
+            />
+            <h3>Ayam Goreng</h3>
+            <p>Menu rumahan, penuh rasa</p>
+          </a>
+          <a class="featured" href="../publik/menu.html">
+            <img
+              src="../assets/images/nasi-uduk.jpg"
+              alt="Nasi Uduk"
+              loading="lazy"
+            />
+            <h3>Nasi Uduk</h3>
+            <p>Menu rumahan, penuh rasa</p>
+          </a>
+          <a class="featured" href="../publik/menu.html">
+            <img
+              src="../assets/images/rawon-ayam.jpg"
+              alt="Rawon Ayam"
+              loading="lazy"
+            />
+            <h3>Rawon Ayam</h3>
+            <p>Menu rumahan, penuh rasa</p>
+          </a>
+        </div>
+        <div class="center">
+          <a class="btn" href="../publik/menu.html">Lihat Menu Lainnya</a>
+        </div>
+      </section>
+      <section class="section wrap" id="langganan">
+        <div class="section-heading">
+          <h2>Pilih Paket Langganan</h2>
+          <p>Makanan disiapkan sesuai jadwal yang kamu pilih.</p>
+        </div>
+        <div class="plans" id="plan-list">
+          <article class="plan">
+            <h3>1 Day</h3>
+            <div class="old-price">&nbsp;</div>
+            <div class="price">Rp 12.000</div>
+            <p>1x makanan disiapkan</p>
+            <ul class="features">
+              <li>Pilih jadwal pemesanan</li>
+              <li>Pilih menu untuk esok hari</li>
+              <li>Pilih tanggal libur</li>
+              <li>Beri ulasan dan rating</li>
+            </ul>
+            <button class="btn wide" data-plan="1">Pilih paket 1 Day</button>
+          </article>
+          <article class="plan">
+            <h3>7 Day</h3>
+            <div class="old-price">
+              <s>Rp 84.000</s>
+              <span class="saving">Hemat Rp 5.000</span>
+            </div>
+            <div class="price">Rp 79.000</div>
+            <p>7x makanan disiapkan</p>
+            <ul class="features">
+              <li>Pilih jadwal pemesanan</li>
+              <li>Pilih menu untuk esok hari</li>
+              <li>Pilih tanggal libur</li>
+              <li>Beri ulasan dan rating</li>
+            </ul>
+            <button class="btn wide" data-plan="2">Pilih paket 7 Day</button>
+          </article>
+          <article class="plan best">
+            <span class="best-label">Paling hemat</span>
+            <h3>30 Day</h3>
+            <div class="old-price">
+              <s>Rp 360.000</s>
+              <span class="saving">Hemat Rp 35.000</span>
+            </div>
+            <div class="price">Rp 325.000</div>
+            <p>30x makanan disiapkan</p>
+            <ul class="features">
+              <li>Pilih jadwal pemesanan</li>
+              <li>Pilih menu untuk esok hari</li>
+              <li>Pilih tanggal libur</li>
+              <li>Beri ulasan dan rating</li>
+            </ul>
+            <button class="btn wide" data-plan="3">Pilih paket 30 Day</button>
+          </article>
+        </div>
+      </section>
+      <section class="section wrap" id="ulasan">
+        <div class="review-summary">
+          <div>
+            <div class="rating-average">
+              <strong>4,8</strong>
+              <span>
+                <span class="stars">★</span>
+                <br />
+                <small>Dari 4 ulasan menu</small>
+              </span>
+            </div>
+            <div class="rating-bars">
+              <div class="rating-row">
+                <span>5</span>
+                <span class="stars">★</span>
+                <div class="track"><i style="width: 100%"></i></div>
+                <span>3</span>
+              </div>
+              <div class="rating-row">
+                <span>4</span>
+                <span class="stars">★</span>
+                <div class="track">
+                  <i style="width: 33.33333333333333%"></i>
+                </div>
+                <span>1</span>
+              </div>
+              <div class="rating-row">
+                <span>3</span>
+                <span class="stars">★</span>
+                <div class="track"><i style="width: 0%"></i></div>
+                <span>0</span>
+              </div>
+              <div class="rating-row">
+                <span>2</span>
+                <span class="stars">★</span>
+                <div class="track"><i style="width: 0%"></i></div>
+                <span>0</span>
+              </div>
+              <div class="rating-row">
+                <span>1</span>
+                <span class="stars">★</span>
+                <div class="track"><i style="width: 0%"></i></div>
+                <span>0</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2>Rating & Ulasan Pelanggan</h2>
+            <p>
+              Temukan pengalaman pelanggan untuk setiap menu Bunda Rahma. Lihat
+              menu yang dinikmati, rating, serta ulasan rasanya. Sudah menerima
+              pesanan? Beri rating melalui riwayat pesananmu.
+            </p>
+            <div class="button-row">
+              <a class="btn secondary" href="#daftar-ulasan">Baca Ulasan</a>
+            </div>
+            <small>Data contoh dan ulasan demo pada browser ini.</small>
+          </div>
+        </div>
+        <div id="review-list">
+          <div class="toolbar" id="daftar-ulasan">
+            <h2 style="font-size: 28px">Ulasan Terbaru</h2>
+            <div class="review-filters">
+              <select
+                class="inline-filter"
+                id="review-menu-filter"
+                aria-label="Filter ulasan per menu"
+              >
+                <option value="">Semua menu</option>
+                <option value="Ayam Bakar Bumbu Rujak">
+                  Ayam Bakar Bumbu Rujak
+                </option>
+                <option value="Ayam Goreng">Ayam Goreng</option>
+                <option value="Nasi Uduk">Nasi Uduk</option>
+                <option value="Rendang Daging">Rendang Daging</option>
+              </select>
+              <label class="muted">
+                Urutkan:
+                <select class="inline-filter" id="review-sort">
+                  <option value="new" selected>Terbaru</option>
+                  <option value="old">Terlama</option>
+                  <option value="high">Rating tertinggi</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div class="review-grid">
+            <article class="review">
+              <div class="stars" aria-label="5 dari 5 bintang">★★★★★</div>
+              <div class="review-menu-label">
+                <small>MENU YANG DIULAS</small>
+                <strong>Ayam Goreng</strong>
+              </div>
+              <div class="review-person">
+                <span class="avatar">S</span>
+                <b>Siti Aisyah</b>
+                <small>28 Sep 2026</small>
+              </div>
+              <p>
+                Nasi kotaknya enak banget, tepat waktu dan porsinya pas. Semua
+                tamu di acara kantor kami puas dengan menu dan penyajiannya.
+                Pasti pesan lagi bulan depan!
+              </p>
+            </article>
+            <article class="review">
+              <div class="stars" aria-label="5 dari 5 bintang">★★★★★</div>
+              <div class="review-menu-label">
+                <small>MENU YANG DIULAS</small>
+                <strong>Ayam Bakar Bumbu Rujak</strong>
+              </div>
+              <div class="review-person">
+                <span class="avatar">D</span>
+                <b>Dewi Lestari</b>
+                <small>21 Sep 2026</small>
+              </div>
+              <p>
+                Dipesan untuk arisan keluarga, semua tamu puas. Ayam bakarnya
+                empuk, bumbunya meresap, dan pengirimannya sangat tepat waktu.
+                Sangat recommended!
+              </p>
+            </article>
+            <article class="review">
+              <div class="stars" aria-label="4 dari 5 bintang">★★★★☆</div>
+              <div class="review-menu-label">
+                <small>MENU YANG DIULAS</small>
+                <strong>Nasi Uduk</strong>
+              </div>
+              <div class="review-person">
+                <span class="avatar">A</span>
+                <b>Andi Saputra</b>
+                <small>18 Sep 2026</small>
+              </div>
+              <p>
+                Porsinya pas dan rasanya cocok. Pilihan menu cukup beragam untuk
+                makan siang sehari-hari.
+              </p>
+            </article>
+            <article class="review">
+              <div class="stars" aria-label="5 dari 5 bintang">★★★★★</div>
+              <div class="review-menu-label">
+                <small>MENU YANG DIULAS</small>
+                <strong>Rendang Daging</strong>
+              </div>
+              <div class="review-person">
+                <span class="avatar">R</span>
+                <b>Rizky Pratama</b>
+                <small>14 Sep 2026</small>
+              </div>
+              <p>
+                Rendangnya empuk, sambalnya juga enak. Pengiriman sampai sesuai
+                jadwal.
+              </p>
+            </article>
+          </div>
+          <div class="pagination" aria-label="Halaman ulasan">
+            <button data-review-page="1" aria-label="Sebelumnya">‹</button>
+            <button class="active" data-review-page="1">1</button>
+            <button class="" data-review-page="2">2</button>
+            <button data-review-page="2" aria-label="Berikutnya">›</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="wrap">
+        <span>© 2026 Catering Bunda Rahma</span>
+        <span>Enak, lezat, dan tepat waktu.</span>
+        <a href="../admin/login.html">Login admin ↗</a>
+      </div>
+    </footer>
+
+    <template id="preview-login-required" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Lihat halaman pelanggan</h3>
+        <p>
+          Gunakan tombol sementara untuk membuka tampilan pelanggan atau admin.
+        </p>
+        <div class="preview-login-actions">
+          <a class="btn wide" href="../pelanggan/index.html">
+            Buka Halaman Pelanggan
+          </a>
+          <a class="btn secondary wide" href="../admin/index.html">
+            Buka Dashboard Admin
+          </a>
+        </div>
+      </div>
+    </template>
+    <template id="preview-forgot" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Lupa Password</h3>
+        <p>
+          Ini hanya tampilan. Kamu bisa membuka halaman pelanggan atau admin
+          melalui tombol sementara pada halaman login.
+        </p>
+      </div>
+    </template>
+    <div id="modal-root"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="../assets/js/app.js"></script>
+  </body>
+</html>

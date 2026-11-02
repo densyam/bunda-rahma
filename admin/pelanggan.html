@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#290a04" />
+    <meta
+      name="description"
+      content="Tampilan Catering Bunda Rahma — menu harian, paket langganan, dan dashboard admin."
+    />
+    <title>Kelola Pelanggan · Bunda Rahma</title>
+    <link rel="icon" href="../assets/images/logo.png" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body class="admin">
+    <div class="admin-shell">
+      <div class="admin-overlay"></div>
+      <aside class="sidebar">
+        <a class="brand" href="../admin/index.html">
+          <img
+            src="../assets/images/logo.png"
+            alt="Logo kucing Catering Bunda Rahma"
+          />
+          <span>
+            CATERING
+            <br />
+            <b>BUNDA RAHMA</b>
+          </span>
+        </a>
+        <p class="sidebar-label">Menu utama</p>
+        <nav>
+          <a class="" href="../admin/index.html">
+            <span class="nav-icon">◫</span>
+            Dashboard
+          </a>
+          <a class="active" href="../admin/pelanggan.html">
+            <span class="nav-icon">♙</span>
+            Kelola Pelanggan
+          </a>
+          <a class="" href="../admin/menu.html">
+            <span class="nav-icon">♧</span>
+            Kelola Menu
+          </a>
+          <a class="" href="../admin/langganan.html">
+            <span class="nav-icon">▣</span>
+            Kelola Langganan
+          </a>
+          <a class="" href="../admin/paket.html">
+            <span class="nav-icon">▤</span>
+            Kelola Paket Langganan
+          </a>
+          <a class="" href="../admin/pengantaran.html">
+            <span class="nav-icon">▦</span>
+            Jadwal Pengantaran
+          </a>
+          <a class="" href="../admin/ulasan.html">
+            <span class="nav-icon">★</span>
+            Rating & Ulasan
+          </a>
+        </nav>
+        <div class="bottom">
+          <nav>
+            <a href="../publik/index.html">
+              <span class="nav-icon">↗</span>
+              Lihat website
+            </a>
+            <a href="../admin/login.html" data-logout>
+              <span class="nav-icon">⇥</span>
+              Keluar
+            </a>
+          </nav>
+          <small style="display: block; text-align: center; margin-top: 18px">
+            Bunda Rahma · Admin Panel
+          </small>
+        </div>
+      </aside>
+      <div class="admin-main">
+        <header class="admin-top">
+          <button
+            class="admin-mobile-toggle"
+            aria-label="Buka sidebar"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
+          <p>Selamat datang di panel Bunda Rahma</p>
+          <div class="admin-identity">
+            <span class="avatar">A</span>
+            <div>
+              <b>Administrator</b>
+              <small style="display: block">Pengelola catering</small>
+            </div>
+          </div>
+        </header>
+        <main class="admin-content">
+          <div class="admin-heading">
+            <div>
+              <h1>Kelola Pelanggan</h1>
+              <p>Lihat dan kelola informasi pelanggan catering.</p>
+            </div>
+            <button class="btn" data-add="customers">
+              ＋ Tambah pelanggan
+            </button>
+          </div>
+          <div class="toolbar">
+            <input
+              type="search"
+              class="search"
+              id="admin-search"
+              placeholder="Cari pelanggan…"
+              aria-label="Cari data"
+            />
+            <select
+              class="inline-filter"
+              id="admin-filter"
+              aria-label="Filter status"
+            >
+              <option>Semua status</option>
+              <option>Aktif</option>
+              <option>Nonaktif</option>
+            </select>
+          </div>
+          <div id="customer-list">
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Pelanggan</th>
+                    <th>WhatsApp</th>
+                    <th>Alamat</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <b>Nadia Putri</b>
+                      <small>nadia@example.com</small>
+                    </td>
+                    <td>0812 3456 7890</td>
+                    <td>Politeknik Batam</td>
+                    <td><span class="badge green">Aktif</span></td>
+                    <td>
+                      <div class="row-actions">
+                        <button data-edit="customers:1">Edit</button>
+                        <button class="danger" data-delete="customers:1">
+                          Hapus
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Siti Aisyah</b>
+                      <small>siti@example.com</small>
+                    </td>
+                    <td>0813 8899 2211</td>
+                    <td>Batam Centre</td>
+                    <td><span class="badge green">Aktif</span></td>
+                    <td>
+                      <div class="row-actions">
+                        <button data-edit="customers:2">Edit</button>
+                        <button class="danger" data-delete="customers:2">
+                          Hapus
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Dewi Lestari</b>
+                      <small>dewi@example.com</small>
+                    </td>
+                    <td>0821 3456 7822</td>
+                    <td>Batu Aji, Batam</td>
+                    <td><span class="badge green">Aktif</span></td>
+                    <td>
+                      <div class="row-actions">
+                        <button data-edit="customers:3">Edit</button>
+                        <button class="danger" data-delete="customers:3">
+                          Hapus
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Rizky Pratama</b>
+                      <small>rizky@example.com</small>
+                    </td>
+                    <td>0852 1122 3344</td>
+                    <td>Sekupang, Batam</td>
+                    <td><span class="badge">Nonaktif</span></td>
+                    <td>
+                      <div class="row-actions">
+                        <button data-edit="customers:4">Edit</button>
+                        <button class="danger" data-delete="customers:4">
+                          Hapus
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Andi Saputra</b>
+                      <small>andi@example.com</small>
+                    </td>
+                    <td>0812 9988 7766</td>
+                    <td>Bengkong, Batam</td>
+                    <td><span class="badge green">Aktif</span></td>
+                    <td>
+                      <div class="row-actions">
+                        <button data-edit="customers:5">Edit</button>
+                        <button class="danger" data-delete="customers:5">
+                          Hapus
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <small style="display: block; margin-top: 20px">
+            Data contoh tetap · Form tambah, edit, dan hapus hanya untuk
+            pratinjau.
+          </small>
+        </main>
+      </div>
+    </div>
+
+    <template id="preview-add-customers" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Tambah pelanggan</h3>
+        <form id="edit-form" data-type="customers" data-id="">
+          <div class="field">
+            <label for="name">Nama pelanggan *</label>
+            <input type="text" id="name" name="name" value="" required />
+          </div>
+          <div class="field">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" value="" required />
+          </div>
+          <div class="field">
+            <label for="phone">Nomor WhatsApp *</label>
+            <input type="tel" id="phone" name="phone" value="" required />
+          </div>
+          <div class="field">
+            <label for="address">Alamat *</label>
+            <input type="text" id="address" name="address" value="" required />
+          </div>
+          <div class="field">
+            <label for="status">Status *</label>
+            <select id="status" name="status">
+              <option value="Aktif">Aktif</option>
+              <option value="Nonaktif">Nonaktif</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-edit-customers-1" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Edit pelanggan</h3>
+        <form id="edit-form" data-type="customers" data-id="1">
+          <div class="field">
+            <label for="name">Nama pelanggan *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value="Nadia Putri"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="email">Email *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value="nadia@example.com"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="phone">Nomor WhatsApp *</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value="0812 3456 7890"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="address">Alamat *</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              value="Politeknik Batam"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="status">Status *</label>
+            <select id="status" name="status">
+              <option value="Aktif" selected>Aktif</option>
+              <option value="Nonaktif">Nonaktif</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-edit-customers-2" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Edit pelanggan</h3>
+        <form id="edit-form" data-type="customers" data-id="2">
+          <div class="field">
+            <label for="name">Nama pelanggan *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value="Siti Aisyah"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="email">Email *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value="siti@example.com"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="phone">Nomor WhatsApp *</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value="0813 8899 2211"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="address">Alamat *</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              value="Batam Centre"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="status">Status *</label>
+            <select id="status" name="status">
+              <option value="Aktif" selected>Aktif</option>
+              <option value="Nonaktif">Nonaktif</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-edit-customers-3" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Edit pelanggan</h3>
+        <form id="edit-form" data-type="customers" data-id="3">
+          <div class="field">
+            <label for="name">Nama pelanggan *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value="Dewi Lestari"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="email">Email *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value="dewi@example.com"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="phone">Nomor WhatsApp *</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value="0821 3456 7822"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="address">Alamat *</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              value="Batu Aji, Batam"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="status">Status *</label>
+            <select id="status" name="status">
+              <option value="Aktif" selected>Aktif</option>
+              <option value="Nonaktif">Nonaktif</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-edit-customers-4" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Edit pelanggan</h3>
+        <form id="edit-form" data-type="customers" data-id="4">
+          <div class="field">
+            <label for="name">Nama pelanggan *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value="Rizky Pratama"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="email">Email *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value="rizky@example.com"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="phone">Nomor WhatsApp *</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value="0852 1122 3344"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="address">Alamat *</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              value="Sekupang, Batam"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="status">Status *</label>
+            <select id="status" name="status">
+              <option value="Aktif">Aktif</option>
+              <option value="Nonaktif" selected>Nonaktif</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-edit-customers-5" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Edit pelanggan</h3>
+        <form id="edit-form" data-type="customers" data-id="5">
+          <div class="field">
+            <label for="name">Nama pelanggan *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value="Andi Saputra"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="email">Email *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value="andi@example.com"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="phone">Nomor WhatsApp *</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value="0812 9988 7766"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="address">Alamat *</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              value="Bengkong, Batam"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="status">Status *</label>
+            <select id="status" name="status">
+              <option value="Aktif" selected>Aktif</option>
+              <option value="Nonaktif">Nonaktif</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-delete" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Hapus data?</h3>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <div class="button-row">
+          <button class="btn secondary" data-close>Batal</button>
+          <button class="btn" data-preview-action>Hapus</button>
+        </div>
+      </div>
+    </template>
+    <template id="preview-login-required" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Lihat halaman pelanggan</h3>
+        <p>
+          Gunakan tombol sementara untuk membuka tampilan pelanggan atau admin.
+        </p>
+        <div class="preview-login-actions">
+          <a class="btn wide" href="../pelanggan/index.html">
+            Buka Halaman Pelanggan
+          </a>
+          <a class="btn secondary wide" href="../admin/index.html">
+            Buka Dashboard Admin
+          </a>
+        </div>
+      </div>
+    </template>
+    <template id="preview-forgot" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Lupa Password</h3>
+        <p>
+          Ini hanya tampilan. Kamu bisa membuka halaman pelanggan atau admin
+          melalui tombol sementara pada halaman login.
+        </p>
+      </div>
+    </template>
+    <div id="modal-root"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="../assets/js/app.js"></script>
+  </body>
+</html>

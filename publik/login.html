@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#290a04" />
+    <meta
+      name="description"
+      content="Tampilan Catering Bunda Rahma — menu harian, paket langganan, dan dashboard admin."
+    />
+    <title>Login · Bunda Rahma</title>
+    <link rel="icon" href="../assets/images/logo.png" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body class="public">
+    <main class="auth">
+      <section class="auth-form-side">
+        <div style="width: 100%; max-width: 590px">
+          <a class="auth-back" href="../publik/index.html">
+            ← Kembali ke beranda
+          </a>
+          <div class="auth-card">
+            <div class="auth-tabs">
+              <a class="active" href="../publik/login.html">Pelanggan</a>
+              <a class="" href="../admin/login.html">Admin</a>
+            </div>
+            <h1>Login</h1>
+            <form id="auth-form">
+              <div class="field">
+                <label for="name">Nama</label>
+                <input
+                  id="name"
+                  name="name"
+                  placeholder="Masukkan Nama"
+                  autocomplete="username"
+                />
+              </div>
+              <div class="field">
+                <label for="password">Password</label>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  placeholder="Masukkan Password"
+                  autocomplete="off"
+                />
+              </div>
+              <button
+                type="button"
+                style="background: none; padding: 0; font-size: 11px"
+                data-forgot
+              >
+                Lupa Password
+              </button>
+              <div class="preview-login-actions">
+                <a class="btn wide" href="../pelanggan/index.html">
+                  Buka Halaman Pelanggan
+                </a>
+                <a class="btn secondary wide" href="../admin/index.html">
+                  Buka Dashboard Admin
+                </a>
+              </div>
+            </form>
+            <div class="switch">
+              Belum punya akun?
+              <br />
+              <a href="../publik/register.html">Register</a>
+            </div>
+          </div>
+          <div class="demo-note" style="margin-top: 18px">
+            Pratinjau tampilan saja. Data contoh bersifat tetap; tidak ada
+            perubahan atau penyimpanan data.
+          </div>
+        </div>
+      </section>
+      <aside class="auth-art">
+        <img
+          class="logo"
+          src="../assets/images/logo.png"
+          alt="Catering Bunda Rahma"
+        />
+        <img
+          class="meal"
+          src="../assets/images/hero.png"
+          alt="Hidangan segar Bunda Rahma"
+        />
+      </aside>
+    </main>
+
+    <template id="preview-login-required" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Lihat halaman pelanggan</h3>
+        <p>
+          Gunakan tombol sementara untuk membuka tampilan pelanggan atau admin.
+        </p>
+        <div class="preview-login-actions">
+          <a class="btn wide" href="../pelanggan/index.html">
+            Buka Halaman Pelanggan
+          </a>
+          <a class="btn secondary wide" href="../admin/index.html">
+            Buka Dashboard Admin
+          </a>
+        </div>
+      </div>
+    </template>
+    <template id="preview-forgot" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Lupa Password</h3>
+        <p>
+          Ini hanya tampilan. Kamu bisa membuka halaman pelanggan atau admin
+          melalui tombol sementara pada halaman login.
+        </p>
+      </div>
+    </template>
+    <div id="modal-root"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="../assets/js/app.js"></script>
+  </body>
+</html>

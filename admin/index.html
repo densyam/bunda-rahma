@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#290a04" />
+    <meta
+      name="description"
+      content="Tampilan Catering Bunda Rahma — menu harian, paket langganan, dan dashboard admin."
+    />
+    <title>Dashboard · Bunda Rahma</title>
+    <link rel="icon" href="../assets/images/logo.png" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body class="admin">
+    <div class="admin-shell">
+      <div class="admin-overlay"></div>
+      <aside class="sidebar">
+        <a class="brand" href="../admin/index.html">
+          <img
+            src="../assets/images/logo.png"
+            alt="Logo kucing Catering Bunda Rahma"
+          />
+          <span>
+            CATERING
+            <br />
+            <b>BUNDA RAHMA</b>
+          </span>
+        </a>
+        <p class="sidebar-label">Menu utama</p>
+        <nav>
+          <a class="active" href="../admin/index.html">
+            <span class="nav-icon">◫</span>
+            Dashboard
+          </a>
+          <a class="" href="../admin/pelanggan.html">
+            <span class="nav-icon">♙</span>
+            Kelola Pelanggan
+          </a>
+          <a class="" href="../admin/menu.html">
+            <span class="nav-icon">♧</span>
+            Kelola Menu
+          </a>
+          <a class="" href="../admin/langganan.html">
+            <span class="nav-icon">▣</span>
+            Kelola Langganan
+          </a>
+          <a class="" href="../admin/paket.html">
+            <span class="nav-icon">▤</span>
+            Kelola Paket Langganan
+          </a>
+          <a class="" href="../admin/pengantaran.html">
+            <span class="nav-icon">▦</span>
+            Jadwal Pengantaran
+          </a>
+          <a class="" href="../admin/ulasan.html">
+            <span class="nav-icon">★</span>
+            Rating & Ulasan
+          </a>
+        </nav>
+        <div class="bottom">
+          <nav>
+            <a href="../publik/index.html">
+              <span class="nav-icon">↗</span>
+              Lihat website
+            </a>
+            <a href="../admin/login.html" data-logout>
+              <span class="nav-icon">⇥</span>
+              Keluar
+            </a>
+          </nav>
+          <small style="display: block; text-align: center; margin-top: 18px">
+            Bunda Rahma · Admin Panel
+          </small>
+        </div>
+      </aside>
+      <div class="admin-main">
+        <header class="admin-top">
+          <button
+            class="admin-mobile-toggle"
+            aria-label="Buka sidebar"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
+          <p>Selamat datang di panel Bunda Rahma</p>
+          <div class="admin-identity">
+            <span class="avatar">A</span>
+            <div>
+              <b>Administrator</b>
+              <small style="display: block">Pengelola catering</small>
+            </div>
+          </div>
+        </header>
+        <main class="admin-content">
+          <div class="admin-heading">
+            <div>
+              <h1>Dashboard</h1>
+              <p>Ringkasan pelanggan, langganan, dan aktivitas catering.</p>
+            </div>
+          </div>
+          <div class="demo-note">
+            Pratinjau tampilan saja. Data contoh bersifat tetap; tidak ada
+            perubahan atau penyimpanan data.
+          </div>
+          <div class="stats" id="dashboard-stats">
+            <article class="stat">
+              <div class="stat-head">
+                <span>Total pelanggan</span>
+                <span>♙</span>
+              </div>
+              <strong>5</strong>
+              <small>Seluruh pelanggan terdaftar</small>
+            </article>
+            <article class="stat">
+              <div class="stat-head">
+                <span>Total penghasilan</span>
+                <span>↗</span>
+              </div>
+              <strong>Rp 741.000</strong>
+              <small>Total nilai langganan contoh</small>
+            </article>
+            <article class="stat">
+              <div class="stat-head">
+                <span>Langganan aktif</span>
+                <span>▣</span>
+              </div>
+              <strong>2</strong>
+              <small>Pelanggan yang sedang berlangganan</small>
+            </article>
+            <article class="stat">
+              <div class="stat-head">
+                <span>Menu tersedia</span>
+                <span>♧</span>
+              </div>
+              <strong>8</strong>
+              <small>Pilihan menu untuk pelanggan</small>
+            </article>
+          </div>
+          <section class="delivery-dashboard-section">
+            <div class="panel-heading">
+              <div>
+                <h2>Operasional Hari Ini</h2>
+                <p>Senin, 2 November 2026 · data contoh</p>
+              </div>
+              <a class="btn small" href="pengantaran.html">
+                Jadwal Pengantaran →
+              </a>
+            </div>
+            <div class="stats delivery-dashboard-stats">
+              <a class="stat" href="pengantaran.html?tanggal=2026-11-02">
+                <div class="stat-head">
+                  <span>Pengantaran hari ini</span>
+                  <span>▦</span>
+                </div>
+                <strong id="dashboard-delivery-today">2</strong>
+                <small>Pengantaran aktif pada tanggal hari ini</small>
+              </a>
+              <a
+                class="stat"
+                href="pengantaran.html?tanggal=2026-11-03&amp;tampilan=rekap"
+              >
+                <div class="stat-head">
+                  <span>Porsi untuk besok</span>
+                  <span>♧</span>
+                </div>
+                <strong id="dashboard-portions-tomorrow">2</strong>
+                <small>Kebutuhan dapur · lihat rekap menu</small>
+              </a>
+              <a
+                class="stat"
+                href="pengantaran.html?tanggal=2026-11-02&amp;status=belum-selesai"
+              >
+                <div class="stat-head">
+                  <span>Pengantaran belum selesai</span>
+                  <span>◷</span>
+                </div>
+                <strong id="dashboard-delivery-pending">1</strong>
+                <small>Pengantaran hari ini yang masih berjalan</small>
+              </a>
+              <a class="stat" href="langganan.html">
+                <div class="stat-head">
+                  <span>Pembayaran menunggu konfirmasi</span>
+                  <span>▤</span>
+                </div>
+                <strong>0</strong>
+                <small>Tidak ada pembayaran yang perlu diperiksa</small>
+              </a>
+            </div>
+            <div class="panel delivery-dashboard-recap">
+              <div class="panel-heading">
+                <div>
+                  <h3>Persiapan Menu Besok</h3>
+                  <p>Selasa, 3 November 2026</p>
+                </div>
+                <a
+                  href="pengantaran.html?tanggal=2026-11-03&amp;tampilan=rekap"
+                >
+                  Lihat rekap lengkap →
+                </a>
+              </div>
+              <div id="dashboard-tomorrow-menu">
+                <div class="delivery-mini-menu">
+                  <img
+                    src="../assets/images/rendang-sapi.jpg"
+                    alt="Rendang Sapi"
+                  />
+                  <span>Rendang Sapi</span>
+                  <b>1 porsi</b>
+                </div>
+                <div class="delivery-mini-menu">
+                  <img src="../assets/images/bakso.jpg" alt="Bakso" />
+                  <span>Bakso</span>
+                  <b>1 porsi</b>
+                </div>
+              </div>
+              <small>
+                Pengantaran libur, dijeda, dan dibatalkan dikeluarkan dari
+                hitungan.
+              </small>
+            </div>
+          </section>
+          <div class="dashboard-grid">
+            <section class="panel">
+              <div class="panel-heading">
+                <h3>Penghasilan per bulan</h3>
+                <span class="badge">2026 · contoh</span>
+              </div>
+              <div
+                class="chart"
+                role="img"
+                aria-label="Grafik contoh penghasilan Mei 1,8 juta, Juni 2,4 juta, Juli 2,1 juta, Agustus 3,2 juta, September 3,8 juta, Oktober 4,2 juta rupiah"
+              >
+                <div class="chart-col">
+                  <div
+                    class="bar"
+                    style="height: 67.5px"
+                    title="1,8 juta"
+                  ></div>
+                  <small>Mei</small>
+                </div>
+                <div class="chart-col">
+                  <div class="bar" style="height: 90px" title="2,4 juta"></div>
+                  <small>Jun</small>
+                </div>
+                <div class="chart-col">
+                  <div class="bar" style="height: 78px" title="2,1 juta"></div>
+                  <small>Jul</small>
+                </div>
+                <div class="chart-col">
+                  <div class="bar" style="height: 120px" title="3,2 juta"></div>
+                  <small>Agu</small>
+                </div>
+                <div class="chart-col">
+                  <div class="bar" style="height: 138px" title="3,8 juta"></div>
+                  <small>Sep</small>
+                </div>
+                <div class="chart-col">
+                  <div class="bar" style="height: 150px" title="4,2 juta"></div>
+                  <small>Okt</small>
+                </div>
+              </div>
+              <div class="chart-legend">adm
+                <span class="dot"></span>
+                Penghasilan bulanan (ilustrasi)
+              </div>
+            </section>
+            <section class="panel">
+              <div class="panel-heading">
+                <h3>Paket langganan</h3>
+                <span class="badge" id="dashboard-subscription-total">
+                  4 langganan
+                </span>
+              </div>
+              <div class="package-count dashboard-package-count">
+                <div>
+                  <b>1 Day</b>
+                  <span>1 pelanggan</span>
+                </div>
+                <div class="progress"><i style="width: 25%"></i></div>
+              </div>
+              <div class="package-count dashboard-package-count">
+                <div>
+                  <b>7 Day</b>
+                  <span>1 pelanggan</span>
+                </div>
+                <div class="progress"><i style="width: 25%"></i></div>
+              </div>
+              <div class="package-count dashboard-package-count">
+                <div>
+                  <b>30 Day</b>
+                  <span>2 pelanggan</span>
+                </div>
+                <div class="progress"><i style="width: 50%"></i></div>
+              </div>
+              <a class="btn outline small wide" href="../admin/langganan.html">
+                Lihat semua langganan ↗
+              </a>
+            </section>
+          </div>
+          <div class="panel-heading">
+            <h3>Langganan terbaru</h3>
+            <a
+              style="font-size: 12px; color: var(--cream)"
+              href="../admin/langganan.html"
+            >
+              Lihat semua →
+            </a>
+          </div>
+          <div id="dashboard-subscriptions">
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Pelanggan</th>
+                    <th>Paket</th>
+                    <th>Mulai</th>
+                    <th>Progres</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <b>Nadia Putri</b>
+                      <small>#BR-0001</small>
+                    </td>
+                    <td>
+                      30 Day
+                      <small>Rp 325.000</small>
+                    </td>
+                    <td>2 Nov 2026</td>
+                    <td>
+                      7 / 30 pengantaran
+                      <div
+                        class="progress"
+                        style="width: 100px; height: 5px; margin-top: 7px"
+                      >
+                        <i style="width: 23.333333333333332%"></i>
+                      </div>
+                    </td>
+                    <td><span class="badge green">Aktif</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Siti Aisyah</b>
+                      <small>#BR-0002</small>
+                    </td>
+                    <td>
+                      7 Day
+                      <small>Rp 79.000</small>
+                    </td>
+                    <td>2 Nov 2026</td>
+                    <td>
+                      3 / 7 pengantaran
+                      <div
+                        class="progress"
+                        style="width: 100px; height: 5px; margin-top: 7px"
+                      >
+                        <i style="width: 42.857142857142854%"></i>
+                      </div>
+                    </td>
+                    <td><span class="badge green">Aktif</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Dewi Lestari</b>
+                      <small>#BR-0003</small>
+                    </td>
+                    <td>
+                      30 Day
+                      <small>Rp 325.000</small>
+                    </td>
+                    <td>1 Nov 2026</td>
+                    <td>
+                      12 / 30 pengantaran
+                      <div
+                        class="progress"
+                        style="width: 100px; height: 5px; margin-top: 7px"
+                      >
+                        <i style="width: 40%"></i>
+                      </div>
+                    </td>
+                    <td><span class="badge orange">Dijeda</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Andi Saputra</b>
+                      <small>#BR-0004</small>
+                    </td>
+                    <td>
+                      1 Day
+                      <small>Rp 12.000</small>
+                    </td>
+                    <td>1 Nov 2026</td>
+                    <td>
+                      1 / 1 pengantaran
+                      <div
+                        class="progress"
+                        style="width: 100px; height: 5px; margin-top: 7px"
+                      >
+                        <i style="width: 100%"></i>
+                      </div>
+                    </td>
+                    <td><span class="badge green">Selesai</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <template id="preview-delete" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Hapus data?</h3>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <div class="button-row">
+          <button class="btn secondary" data-close>Batal</button>
+          <button class="btn" data-preview-action>Hapus</button>
+        </div>
+      </div>
+    </template>
+    <template id="preview-login-required" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Lihat halaman pelanggan</h3>
+        <p>
+          Gunakan tombol sementara untuk membuka tampilan pelanggan atau admin.
+        </p>
+        <div class="preview-login-actions">
+          <a class="btn wide" href="../pelanggan/index.html">
+            Buka Halaman Pelanggan
+          </a>
+          <a class="btn secondary wide" href="../admin/index.html">
+            Buka Dashboard Admin
+          </a>
+        </div>
+      </div>
+    </template>
+    <template id="preview-forgot" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Lupa Password</h3>
+        <p>
+          Ini hanya tampilan. Kamu bisa membuka halaman pelanggan atau admin
+          melalui tombol sementara pada halaman login.
+        </p>
+      </div>
+    </template>
+    <div id="modal-root"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/admin-delivery.js"></script>
+  </body>
+</html>

@@ -1,0 +1,914 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#290a04" />
+    <meta
+      name="description"
+      content="Tampilan Catering Bunda Rahma — menu harian, paket langganan, dan dashboard admin."
+    />
+    <title>Kelola Menu · Bunda Rahma</title>
+    <link rel="icon" href="../assets/images/logo.png" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body class="admin">
+    <div class="admin-shell">
+      <div class="admin-overlay"></div>
+      <aside class="sidebar">
+        <a class="brand" href="../admin/index.html">
+          <img
+            src="../assets/images/logo.png"
+            alt="Logo kucing Catering Bunda Rahma"
+          />
+          <span>
+            CATERING
+            <br />
+            <b>BUNDA RAHMA</b>
+          </span>
+        </a>
+        <p class="sidebar-label">Menu utama</p>
+        <nav>
+          <a class="" href="../admin/index.html">
+            <span class="nav-icon">◫</span>
+            Dashboard
+          </a>
+          <a class="" href="../admin/pelanggan.html">
+            <span class="nav-icon">♙</span>
+            Kelola Pelanggan
+          </a>
+          <a class="active" href="../admin/menu.html">
+            <span class="nav-icon">♧</span>
+            Kelola Menu
+          </a>
+          <a class="" href="../admin/langganan.html">
+            <span class="nav-icon">▣</span>
+            Kelola Langganan
+          </a>
+          <a class="" href="../admin/paket.html">
+            <span class="nav-icon">▤</span>
+            Kelola Paket Langganan
+          </a>
+          <a class="" href="../admin/pengantaran.html">
+            <span class="nav-icon">▦</span>
+            Jadwal Pengantaran
+          </a>
+          <a class="" href="../admin/ulasan.html">
+            <span class="nav-icon">★</span>
+            Rating & Ulasan
+          </a>
+        </nav>
+        <div class="bottom">
+          <nav>
+            <a href="../publik/index.html">
+              <span class="nav-icon">↗</span>
+              Lihat website
+            </a>
+            <a href="../admin/login.html" data-logout>
+              <span class="nav-icon">⇥</span>
+              Keluar
+            </a>
+          </nav>
+          <small style="display: block; text-align: center; margin-top: 18px">
+            Bunda Rahma · Admin Panel
+          </small>
+        </div>
+      </aside>
+      <div class="admin-main">
+        <header class="admin-top">
+          <button
+            class="admin-mobile-toggle"
+            aria-label="Buka sidebar"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
+          <p>Selamat datang di panel Bunda Rahma</p>
+          <div class="admin-identity">
+            <span class="avatar">A</span>
+            <div>
+              <b>Administrator</b>
+              <small style="display: block">Pengelola catering</small>
+            </div>
+          </div>
+        </header>
+        <main class="admin-content">
+          <div class="admin-heading">
+            <div>
+              <h1>Kelola Menu</h1>
+              <p>Atur menu, deskripsi, dan ketersediaan makanan.</p>
+            </div>
+            <button class="btn" data-add="menus">＋ Tambah menu</button>
+          </div>
+          <div class="toolbar">
+            <input
+              type="search"
+              class="search"
+              id="admin-search"
+              placeholder="Cari menu…"
+              aria-label="Cari data"
+            />
+            <select
+              class="inline-filter"
+              id="admin-filter"
+              aria-label="Filter status"
+            >
+              <option>Semua status</option>
+              <option>Tersedia</option>
+              <option>Habis</option>
+            </select>
+          </div>
+          <div id="admin-menu-list">
+            <div class="admin-menu-grid">
+              <article class="menu-card">
+                <button
+                  class="image-button"
+                  data-menu="1"
+                  aria-label="Lihat detail Mie Ayam"
+                >
+                  <img
+                    src="../assets/images/mie-ayam.jpg"
+                    alt="Mie Ayam"
+                    loading="lazy"
+                  />
+                </button>
+                <div class="menu-bottom">
+                  <h3>Mie Ayam</h3>
+                  <small>Tersedia</small>
+                  <div class="row-actions">
+                    <button data-edit="menus:1">Edit</button>
+                    <button class="danger" data-delete="menus:1">Hapus</button>
+                  </div>
+                </div>
+              </article>
+              <article class="menu-card">
+                <button
+                  class="image-button"
+                  data-menu="2"
+                  aria-label="Lihat detail Rawon Ayam"
+                >
+                  <img
+                    src="../assets/images/rawon-ayam.jpg"
+                    alt="Rawon Ayam"
+                    loading="lazy"
+                  />
+                </button>
+                <div class="menu-bottom">
+                  <h3>Rawon Ayam</h3>
+                  <small>Tersedia</small>
+                  <div class="row-actions">
+                    <button data-edit="menus:2">Edit</button>
+                    <button class="danger" data-delete="menus:2">Hapus</button>
+                  </div>
+                </div>
+              </article>
+              <article class="menu-card">
+                <button
+                  class="image-button"
+                  data-menu="3"
+                  aria-label="Lihat detail Ayam Goreng"
+                >
+                  <img
+                    src="../assets/images/ayam-goreng.jpg"
+                    alt="Ayam Goreng"
+                    loading="lazy"
+                  />
+                </button>
+                <div class="menu-bottom">
+                  <h3>Ayam Goreng</h3>
+                  <small>Tersedia</small>
+                  <div class="row-actions">
+                    <button data-edit="menus:3">Edit</button>
+                    <button class="danger" data-delete="menus:3">Hapus</button>
+                  </div>
+                </div>
+              </article>
+              <article class="menu-card">
+                <button
+                  class="image-button"
+                  data-menu="4"
+                  aria-label="Lihat detail Nasi Uduk"
+                >
+                  <img
+                    src="../assets/images/nasi-uduk.jpg"
+                    alt="Nasi Uduk"
+                    loading="lazy"
+                  />
+                </button>
+                <div class="menu-bottom">
+                  <h3>Nasi Uduk</h3>
+                  <small>Tersedia</small>
+                  <div class="row-actions">
+                    <button data-edit="menus:4">Edit</button>
+                    <button class="danger" data-delete="menus:4">Hapus</button>
+                  </div>
+                </div>
+              </article>
+              <article class="menu-card">
+                <button
+                  class="image-button"
+                  data-menu="5"
+                  aria-label="Lihat detail Nasi Goreng"
+                >
+                  <img
+                    src="../assets/images/nasi-goreng.jpg"
+                    alt="Nasi Goreng"
+                    loading="lazy"
+                  />
+                </button>
+                <div class="menu-bottom">
+                  <h3>Nasi Goreng</h3>
+                  <small>Tersedia</small>
+                  <div class="row-actions">
+                    <button data-edit="menus:5">Edit</button>
+                    <button class="danger" data-delete="menus:5">Hapus</button>
+                  </div>
+                </div>
+              </article>
+              <article class="menu-card">
+                <button
+                  class="image-button"
+                  data-menu="6"
+                  aria-label="Lihat detail Rendang Sapi"
+                >
+                  <img
+                    src="../assets/images/rendang-sapi.jpg"
+                    alt="Rendang Sapi"
+                    loading="lazy"
+                  />
+                </button>
+                <div class="menu-bottom">
+                  <h3>Rendang Sapi</h3>
+                  <small>Tersedia</small>
+                  <div class="row-actions">
+                    <button data-edit="menus:6">Edit</button>
+                    <button class="danger" data-delete="menus:6">Hapus</button>
+                  </div>
+                </div>
+              </article>
+              <article class="menu-card">
+                <button
+                  class="image-button"
+                  data-menu="7"
+                  aria-label="Lihat detail Bakso"
+                >
+                  <img
+                    src="../assets/images/bakso.jpg"
+                    alt="Bakso"
+                    loading="lazy"
+                  />
+                </button>
+                <div class="menu-bottom">
+                  <h3>Bakso</h3>
+                  <small>Tersedia</small>
+                  <div class="row-actions">
+                    <button data-edit="menus:7">Edit</button>
+                    <button class="danger" data-delete="menus:7">Hapus</button>
+                  </div>
+                </div>
+              </article>
+              <article class="menu-card">
+                <button
+                  class="image-button"
+                  data-menu="8"
+                  aria-label="Lihat detail Sate Ayam"
+                >
+                  <img
+                    src="../assets/images/sate-ayam.jpg"
+                    alt="Sate Ayam"
+                    loading="lazy"
+                  />
+                </button>
+                <div class="menu-bottom">
+                  <h3>Sate Ayam</h3>
+                  <small>Tersedia</small>
+                  <div class="row-actions">
+                    <button data-edit="menus:8">Edit</button>
+                    <button class="danger" data-delete="menus:8">Hapus</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <small style="display: block; margin-top: 20px">
+            Data contoh tetap · Form tambah, edit, dan hapus hanya untuk
+            pratinjau.
+          </small>
+        </main>
+      </div>
+    </div>
+
+    <template id="preview-menu-1" class="" title="Pratinjau">
+      <div>
+        <div class="menu-detail">
+          <img src="../assets/images/mie-ayam.jpg" alt="Mie Ayam" />
+          <div>
+            <div class="eyebrow">Menu Bunda Rahma</div>
+            <h2>Mie Ayam</h2>
+            <p>
+              Mie kenyal dengan topping ayam berbumbu, sawi segar, dan kuah
+              kaldu hangat.
+            </p>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="preview-menu-2" class="" title="Pratinjau">
+      <div>
+        <div class="menu-detail">
+          <img src="../assets/images/rawon-ayam.jpg" alt="Rawon Ayam" />
+          <div>
+            <div class="eyebrow">Menu Bunda Rahma</div>
+            <h2>Rawon Ayam</h2>
+            <p>Kuah rawon kaya rempah dengan ayam lembut, taoge, dan sambal.</p>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="preview-menu-3" class="" title="Pratinjau">
+      <div>
+        <div class="menu-detail">
+          <img src="../assets/images/ayam-goreng.jpg" alt="Ayam Goreng" />
+          <div>
+            <div class="eyebrow">Menu Bunda Rahma</div>
+            <h2>Ayam Goreng</h2>
+            <p>
+              Ayam goreng berbumbu rempah dengan serundeng renyah, disajikan
+              bersama nasi putih hangat, lalapan, dan sambal.
+            </p>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="preview-menu-4" class="" title="Pratinjau">
+      <div>
+        <div class="menu-detail">
+          <img src="../assets/images/nasi-uduk.jpg" alt="Nasi Uduk" />
+          <div>
+            <div class="eyebrow">Menu Bunda Rahma</div>
+            <h2>Nasi Uduk</h2>
+            <p>
+              Nasi uduk gurih dengan ayam goreng, bihun, telur, tempe, dan
+              sambal.
+            </p>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="preview-menu-5" class="" title="Pratinjau">
+      <div>
+        <div class="menu-detail">
+          <img src="../assets/images/nasi-goreng.jpg" alt="Nasi Goreng" />
+          <div>
+            <div class="eyebrow">Menu Bunda Rahma</div>
+            <h2>Nasi Goreng</h2>
+            <p>
+              Nasi goreng bumbu rumahan dengan telur mata sapi, sayuran, dan
+              acar segar.
+            </p>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="preview-menu-6" class="" title="Pratinjau">
+      <div>
+        <div class="menu-detail">
+          <img src="../assets/images/rendang-sapi.jpg" alt="Rendang Sapi" />
+          <div>
+            <div class="eyebrow">Menu Bunda Rahma</div>
+            <h2>Rendang Sapi</h2>
+            <p>
+              Daging sapi empuk yang dimasak perlahan dengan santan dan rempah
+              pilihan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="preview-menu-7" class="" title="Pratinjau">
+      <div>
+        <div class="menu-detail">
+          <img src="../assets/images/bakso.jpg" alt="Bakso" />
+          <div>
+            <div class="eyebrow">Menu Bunda Rahma</div>
+            <h2>Bakso</h2>
+            <p>
+              Bakso sapi dengan mie, sayuran, dan kuah kaldu hangat yang gurih.
+            </p>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="preview-menu-8" class="" title="Pratinjau">
+      <div>
+        <div class="menu-detail">
+          <img src="../assets/images/sate-ayam.jpg" alt="Sate Ayam" />
+          <div>
+            <div class="eyebrow">Menu Bunda Rahma</div>
+            <h2>Sate Ayam</h2>
+            <p>
+              Sate ayam bakar dengan bumbu kacang, kecap manis, dan irisan
+              bawang.
+            </p>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="preview-add-menus" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Tambah menu</h3>
+        <form id="edit-form" data-type="menus" data-id="">
+          <div class="field">
+            <label for="name">Nama menu *</label>
+            <input type="text" id="name" name="name" value="" required />
+          </div>
+          <div class="field">
+            <label for="description">Deskripsi *</label>
+            <textarea name="description" id="description" required></textarea>
+          </div>
+          <div class="field">
+            <label for="image">Foto menu (aset referensi) *</label>
+            <select id="image" name="image">
+              <option value="mie-ayam.jpg">mie-ayam.jpg</option>
+              <option value="rawon-ayam.jpg">rawon-ayam.jpg</option>
+              <option value="ayam-goreng.jpg">ayam-goreng.jpg</option>
+              <option value="nasi-uduk.jpg">nasi-uduk.jpg</option>
+              <option value="nasi-goreng.jpg">nasi-goreng.jpg</option>
+              <option value="rendang-sapi.jpg">rendang-sapi.jpg</option>
+              <option value="bakso.jpg">bakso.jpg</option>
+              <option value="sate-ayam.jpg">sate-ayam.jpg</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="status">Ketersediaan *</label>
+            <select id="status" name="status">
+              <option value="Tersedia">Tersedia</option>
+              <option value="Habis">Habis</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-edit-menus-1" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Edit menu</h3>
+        <form id="edit-form" data-type="menus" data-id="1">
+          <div class="field">
+            <label for="name">Nama menu *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value="Mie Ayam"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="description">Deskripsi *</label>
+            <textarea name="description" id="description" required>
+Mie kenyal dengan topping ayam berbumbu, sawi segar, dan kuah kaldu hangat.</textarea
+            >
+          </div>
+          <div class="field">
+            <label for="image">Foto menu (aset referensi) *</label>
+            <select id="image" name="image">
+              <option value="mie-ayam.jpg" selected>mie-ayam.jpg</option>
+              <option value="rawon-ayam.jpg">rawon-ayam.jpg</option>
+              <option value="ayam-goreng.jpg">ayam-goreng.jpg</option>
+              <option value="nasi-uduk.jpg">nasi-uduk.jpg</option>
+              <option value="nasi-goreng.jpg">nasi-goreng.jpg</option>
+              <option value="rendang-sapi.jpg">rendang-sapi.jpg</option>
+              <option value="bakso.jpg">bakso.jpg</option>
+              <option value="sate-ayam.jpg">sate-ayam.jpg</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="status">Ketersediaan *</label>
+            <select id="status" name="status">
+              <option value="Tersedia" selected>Tersedia</option>
+              <option value="Habis">Habis</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-edit-menus-2" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Edit menu</h3>
+        <form id="edit-form" data-type="menus" data-id="2">
+          <div class="field">
+            <label for="name">Nama menu *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value="Rawon Ayam"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="description">Deskripsi *</label>
+            <textarea name="description" id="description" required>
+Kuah rawon kaya rempah dengan ayam lembut, taoge, dan sambal.</textarea
+            >
+          </div>
+          <div class="field">
+            <label for="image">Foto menu (aset referensi) *</label>
+            <select id="image" name="image">
+              <option value="mie-ayam.jpg">mie-ayam.jpg</option>
+              <option value="rawon-ayam.jpg" selected>rawon-ayam.jpg</option>
+              <option value="ayam-goreng.jpg">ayam-goreng.jpg</option>
+              <option value="nasi-uduk.jpg">nasi-uduk.jpg</option>
+              <option value="nasi-goreng.jpg">nasi-goreng.jpg</option>
+              <option value="rendang-sapi.jpg">rendang-sapi.jpg</option>
+              <option value="bakso.jpg">bakso.jpg</option>
+              <option value="sate-ayam.jpg">sate-ayam.jpg</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="status">Ketersediaan *</label>
+            <select id="status" name="status">
+              <option value="Tersedia" selected>Tersedia</option>
+              <option value="Habis">Habis</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-edit-menus-3" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Edit menu</h3>
+        <form id="edit-form" data-type="menus" data-id="3">
+          <div class="field">
+            <label for="name">Nama menu *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value="Ayam Goreng"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="description">Deskripsi *</label>
+            <textarea name="description" id="description" required>
+Ayam goreng berbumbu rempah dengan serundeng renyah, disajikan bersama nasi putih hangat, lalapan, dan sambal.</textarea
+            >
+          </div>
+          <div class="field">
+            <label for="image">Foto menu (aset referensi) *</label>
+            <select id="image" name="image">
+              <option value="mie-ayam.jpg">mie-ayam.jpg</option>
+              <option value="rawon-ayam.jpg">rawon-ayam.jpg</option>
+              <option value="ayam-goreng.jpg" selected>ayam-goreng.jpg</option>
+              <option value="nasi-uduk.jpg">nasi-uduk.jpg</option>
+              <option value="nasi-goreng.jpg">nasi-goreng.jpg</option>
+              <option value="rendang-sapi.jpg">rendang-sapi.jpg</option>
+              <option value="bakso.jpg">bakso.jpg</option>
+              <option value="sate-ayam.jpg">sate-ayam.jpg</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="status">Ketersediaan *</label>
+            <select id="status" name="status">
+              <option value="Tersedia" selected>Tersedia</option>
+              <option value="Habis">Habis</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-edit-menus-4" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Edit menu</h3>
+        <form id="edit-form" data-type="menus" data-id="4">
+          <div class="field">
+            <label for="name">Nama menu *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value="Nasi Uduk"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="description">Deskripsi *</label>
+            <textarea name="description" id="description" required>
+Nasi uduk gurih dengan ayam goreng, bihun, telur, tempe, dan sambal.</textarea
+            >
+          </div>
+          <div class="field">
+            <label for="image">Foto menu (aset referensi) *</label>
+            <select id="image" name="image">
+              <option value="mie-ayam.jpg">mie-ayam.jpg</option>
+              <option value="rawon-ayam.jpg">rawon-ayam.jpg</option>
+              <option value="ayam-goreng.jpg">ayam-goreng.jpg</option>
+              <option value="nasi-uduk.jpg" selected>nasi-uduk.jpg</option>
+              <option value="nasi-goreng.jpg">nasi-goreng.jpg</option>
+              <option value="rendang-sapi.jpg">rendang-sapi.jpg</option>
+              <option value="bakso.jpg">bakso.jpg</option>
+              <option value="sate-ayam.jpg">sate-ayam.jpg</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="status">Ketersediaan *</label>
+            <select id="status" name="status">
+              <option value="Tersedia" selected>Tersedia</option>
+              <option value="Habis">Habis</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-edit-menus-5" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Edit menu</h3>
+        <form id="edit-form" data-type="menus" data-id="5">
+          <div class="field">
+            <label for="name">Nama menu *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value="Nasi Goreng"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="description">Deskripsi *</label>
+            <textarea name="description" id="description" required>
+Nasi goreng bumbu rumahan dengan telur mata sapi, sayuran, dan acar segar.</textarea
+            >
+          </div>
+          <div class="field">
+            <label for="image">Foto menu (aset referensi) *</label>
+            <select id="image" name="image">
+              <option value="mie-ayam.jpg">mie-ayam.jpg</option>
+              <option value="rawon-ayam.jpg">rawon-ayam.jpg</option>
+              <option value="ayam-goreng.jpg">ayam-goreng.jpg</option>
+              <option value="nasi-uduk.jpg">nasi-uduk.jpg</option>
+              <option value="nasi-goreng.jpg" selected>nasi-goreng.jpg</option>
+              <option value="rendang-sapi.jpg">rendang-sapi.jpg</option>
+              <option value="bakso.jpg">bakso.jpg</option>
+              <option value="sate-ayam.jpg">sate-ayam.jpg</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="status">Ketersediaan *</label>
+            <select id="status" name="status">
+              <option value="Tersedia" selected>Tersedia</option>
+              <option value="Habis">Habis</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-edit-menus-6" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Edit menu</h3>
+        <form id="edit-form" data-type="menus" data-id="6">
+          <div class="field">
+            <label for="name">Nama menu *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value="Rendang Sapi"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="description">Deskripsi *</label>
+            <textarea name="description" id="description" required>
+Daging sapi empuk yang dimasak perlahan dengan santan dan rempah pilihan.</textarea
+            >
+          </div>
+          <div class="field">
+            <label for="image">Foto menu (aset referensi) *</label>
+            <select id="image" name="image">
+              <option value="mie-ayam.jpg">mie-ayam.jpg</option>
+              <option value="rawon-ayam.jpg">rawon-ayam.jpg</option>
+              <option value="ayam-goreng.jpg">ayam-goreng.jpg</option>
+              <option value="nasi-uduk.jpg">nasi-uduk.jpg</option>
+              <option value="nasi-goreng.jpg">nasi-goreng.jpg</option>
+              <option value="rendang-sapi.jpg" selected>
+                rendang-sapi.jpg
+              </option>
+              <option value="bakso.jpg">bakso.jpg</option>
+              <option value="sate-ayam.jpg">sate-ayam.jpg</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="status">Ketersediaan *</label>
+            <select id="status" name="status">
+              <option value="Tersedia" selected>Tersedia</option>
+              <option value="Habis">Habis</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-edit-menus-7" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Edit menu</h3>
+        <form id="edit-form" data-type="menus" data-id="7">
+          <div class="field">
+            <label for="name">Nama menu *</label>
+            <input type="text" id="name" name="name" value="Bakso" required />
+          </div>
+          <div class="field">
+            <label for="description">Deskripsi *</label>
+            <textarea name="description" id="description" required>
+Bakso sapi dengan mie, sayuran, dan kuah kaldu hangat yang gurih.</textarea
+            >
+          </div>
+          <div class="field">
+            <label for="image">Foto menu (aset referensi) *</label>
+            <select id="image" name="image">
+              <option value="mie-ayam.jpg">mie-ayam.jpg</option>
+              <option value="rawon-ayam.jpg">rawon-ayam.jpg</option>
+              <option value="ayam-goreng.jpg">ayam-goreng.jpg</option>
+              <option value="nasi-uduk.jpg">nasi-uduk.jpg</option>
+              <option value="nasi-goreng.jpg">nasi-goreng.jpg</option>
+              <option value="rendang-sapi.jpg">rendang-sapi.jpg</option>
+              <option value="bakso.jpg" selected>bakso.jpg</option>
+              <option value="sate-ayam.jpg">sate-ayam.jpg</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="status">Ketersediaan *</label>
+            <select id="status" name="status">
+              <option value="Tersedia" selected>Tersedia</option>
+              <option value="Habis">Habis</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-edit-menus-8" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Edit menu</h3>
+        <form id="edit-form" data-type="menus" data-id="8">
+          <div class="field">
+            <label for="name">Nama menu *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value="Sate Ayam"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="description">Deskripsi *</label>
+            <textarea name="description" id="description" required>
+Sate ayam bakar dengan bumbu kacang, kecap manis, dan irisan bawang.</textarea
+            >
+          </div>
+          <div class="field">
+            <label for="image">Foto menu (aset referensi) *</label>
+            <select id="image" name="image">
+              <option value="mie-ayam.jpg">mie-ayam.jpg</option>
+              <option value="rawon-ayam.jpg">rawon-ayam.jpg</option>
+              <option value="ayam-goreng.jpg">ayam-goreng.jpg</option>
+              <option value="nasi-uduk.jpg">nasi-uduk.jpg</option>
+              <option value="nasi-goreng.jpg">nasi-goreng.jpg</option>
+              <option value="rendang-sapi.jpg">rendang-sapi.jpg</option>
+              <option value="bakso.jpg">bakso.jpg</option>
+              <option value="sate-ayam.jpg" selected>sate-ayam.jpg</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="status">Ketersediaan *</label>
+            <select id="status" name="status">
+              <option value="Tersedia" selected>Tersedia</option>
+              <option value="Habis">Habis</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-delete" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Hapus data?</h3>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <div class="button-row">
+          <button class="btn secondary" data-close>Batal</button>
+          <button class="btn" data-preview-action>Hapus</button>
+        </div>
+      </div>
+    </template>
+    <template id="preview-login-required" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Lihat halaman pelanggan</h3>
+        <p>
+          Gunakan tombol sementara untuk membuka tampilan pelanggan atau admin.
+        </p>
+        <div class="preview-login-actions">
+          <a class="btn wide" href="../pelanggan/index.html">
+            Buka Halaman Pelanggan
+          </a>
+          <a class="btn secondary wide" href="../admin/index.html">
+            Buka Dashboard Admin
+          </a>
+        </div>
+      </div>
+    </template>
+    <template id="preview-forgot" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Lupa Password</h3>
+        <p>
+          Ini hanya tampilan. Kamu bisa membuka halaman pelanggan atau admin
+          melalui tombol sementara pada halaman login.
+        </p>
+      </div>
+    </template>
+    <div id="modal-root"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="../assets/js/app.js"></script>
+  </body>
+</html>

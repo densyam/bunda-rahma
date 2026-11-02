@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#290a04" />
+    <meta
+      name="description"
+      content="Tampilan Catering Bunda Rahma — menu harian, paket langganan, dan dashboard admin."
+    />
+    <title>Jadwal Pengantaran · Bunda Rahma</title>
+    <link rel="icon" href="../assets/images/logo.png" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body class="admin">
+    <div class="admin-shell">
+      <div class="admin-overlay"></div>
+      <aside class="sidebar">
+        <a class="brand" href="../admin/index.html">
+          <img
+            src="../assets/images/logo.png"
+            alt="Logo kucing Catering Bunda Rahma"
+          />
+          <span>
+            CATERING
+            <br />
+            <b>BUNDA RAHMA</b>
+          </span>
+        </a>
+        <p class="sidebar-label">Menu utama</p>
+        <nav>
+          <a class="" href="../admin/index.html">
+            <span class="nav-icon">◫</span>
+            Dashboard
+          </a>
+          <a class="" href="../admin/pelanggan.html">
+            <span class="nav-icon">♙</span>
+            Kelola Pelanggan
+          </a>
+          <a class="" href="../admin/menu.html">
+            <span class="nav-icon">♧</span>
+            Kelola Menu
+          </a>
+          <a class="" href="../admin/langganan.html">
+            <span class="nav-icon">▣</span>
+            Kelola Langganan
+          </a>
+          <a class="" href="../admin/paket.html">
+            <span class="nav-icon">▤</span>
+            Kelola Paket Langganan
+          </a>
+          <a class="active" href="../admin/pengantaran.html">
+            <span class="nav-icon">▦</span>
+            Jadwal Pengantaran
+          </a>
+          <a class="" href="../admin/ulasan.html">
+            <span class="nav-icon">★</span>
+            Rating & Ulasan
+          </a>
+        </nav>
+        <div class="bottom">
+          <nav>
+            <a href="../publik/index.html">
+              <span class="nav-icon">↗</span>
+              Lihat website
+            </a>
+            <a href="../admin/login.html" data-logout>
+              <span class="nav-icon">⇥</span>
+              Keluar
+            </a>
+          </nav>
+          <small style="display: block; text-align: center; margin-top: 18px">
+            Bunda Rahma · Admin Panel
+          </small>
+        </div>
+      </aside>
+      <div class="admin-main">
+        <header class="admin-top">
+          <button
+            class="admin-mobile-toggle"
+            aria-label="Buka sidebar"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
+          <p>Selamat datang di panel Bunda Rahma</p>
+          <div class="admin-identity">
+            <span class="avatar">A</span>
+            <div>
+              <b>Administrator</b>
+              <small style="display: block">Pengelola catering</small>
+            </div>
+          </div>
+        </header>
+        <main class="admin-content">
+          <div id="delivery-page">
+            <div class="admin-heading">
+              <div>
+                <div class="eyebrow">OPERASIONAL CATERING</div>
+                <h1>Jadwal Pengantaran</h1>
+                <p>
+                  Lihat menu pilihan pelanggan, kebutuhan porsi, dan tujuan
+                  pengiriman per hari.
+                </p>
+              </div>
+              <a class="btn outline small" href="langganan.html">
+                Kelola Langganan ↗
+              </a>
+            </div>
+            <div class="panel delivery-date-toolbar">
+              <div class="field">
+                <label for="delivery-date">Tanggal pengantaran</label>
+                <input type="date" id="delivery-date" value="2026-11-02" />
+              </div>
+              <div class="delivery-quick-dates">
+                <button
+                  class="btn small active"
+                  type="button"
+                  id="delivery-today"
+                >
+                  Hari ini
+                </button>
+                <button
+                  class="btn outline small"
+                  type="button"
+                  id="delivery-tomorrow"
+                >
+                  Besok
+                </button>
+              </div>
+              <div class="delivery-date-caption">
+                <b id="delivery-date-caption">Senin, 2 November 2026</b>
+                <small>
+                  Data contoh · satu porsi per pelanggan per pengantaran
+                </small>
+              </div>
+            </div>
+            <div class="stats delivery-stats">
+              <article class="stat">
+                <div class="stat-head">
+                  <span>Pengantaran aktif</span>
+                  <span>▣</span>
+                </div>
+                <strong id="delivery-active-count">2</strong>
+                <small>Jadwal yang perlu disiapkan / sudah diantar</small>
+              </article>
+              <article class="stat">
+                <div class="stat-head">
+                  <span>Total porsi</span>
+                  <span>♧</span>
+                </div>
+                <strong id="delivery-portion-count">2</strong>
+                <small>Total kebutuhan pada tanggal pilihan</small>
+              </article>
+              <article class="stat">
+                <div class="stat-head">
+                  <span>Sudah selesai</span>
+                  <span>✓</span>
+                </div>
+                <strong id="delivery-done-count">1</strong>
+                <small>Pengantaran telah diterima</small>
+              </article>
+              <article class="stat">
+                <div class="stat-head">
+                  <span>Belum selesai</span>
+                  <span>◷</span>
+                </div>
+                <strong id="delivery-pending-count">1</strong>
+                <small>Menunggu, diproses, atau dalam pengiriman</small>
+              </article>
+            </div>
+            <div
+              class="delivery-tabs"
+              role="tablist"
+              aria-label="Tampilan jadwal"
+            >
+              <button
+                type="button"
+                role="tab"
+                id="delivery-list-tab"
+                aria-controls="delivery-list-panel"
+                aria-selected="true"
+                class="active"
+              >
+                Daftar Pengantaran
+              </button>
+              <button
+                type="button"
+                role="tab"
+                id="delivery-recap-tab"
+                aria-controls="delivery-recap-panel"
+                aria-selected="false"
+              >
+                Rekap Menu Harian
+              </button>
+            </div>
+            <section
+              id="delivery-list-panel"
+              role="tabpanel"
+              aria-labelledby="delivery-list-tab"
+            >
+              <div class="toolbar">
+                <input
+                  type="search"
+                  class="search"
+                  id="delivery-search"
+                  placeholder="Cari pelanggan, menu, atau alamat…"
+                  aria-label="Cari pengantaran"
+                />
+                <select
+                  class="inline-filter"
+                  id="delivery-status"
+                  aria-label="Filter status pengantaran"
+                >
+                  <option value="">Semua status</option>
+                  <option>Menunggu</option>
+                  <option>Diproses</option>
+                  <option>Dikirim</option>
+                  <option>Selesai</option>
+                  <option>Libur</option>
+                  <option>Dijeda</option>
+                  <option>Dibatalkan</option>
+                </select>
+              </div>
+              <p class="delivery-result-count" id="delivery-result-count">
+                Menampilkan 3 jadwal
+              </p>
+              <div class="table-scroll">
+                <table class="delivery-table">
+                  <thead>
+                    <tr>
+                      <th>Pelanggan</th>
+                      <th>Menu pilihan</th>
+                      <th>Porsi</th>
+                      <th>Alamat pengiriman</th>
+                      <th>Jam antar</th>
+                      <th>Status</th>
+                      <th>Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody id="delivery-table-body">
+                    <tr>
+                      <td>
+                        <b>Nadia Putri</b>
+                        <small>#BR-0001</small>
+                      </td>
+                      <td>
+                        <div class="table-img">
+                          <img
+                            src="../assets/images/ayam-goreng.jpg"
+                            alt="Ayam Goreng"
+                          />
+                          <b>Ayam Goreng</b>
+                        </div>
+                      </td>
+                      <td>1 porsi</td>
+                      <td>
+                        Politeknik Batam
+                        <small>Batam Centre · Rumah</small>
+                      </td>
+                      <td>11.00–13.00 WIB</td>
+                      <td><span class="badge orange">Diproses</span></td>
+                      <td>
+                        <a
+                          class="delivery-row-link"
+                          href="jadwal-menu.html?langganan=1"
+                        >
+                          Lihat jadwal →
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <b>Siti Aisyah</b>
+                        <small>#BR-0002</small>
+                      </td>
+                      <td>
+                        <div class="table-img">
+                          <img
+                            src="../assets/images/nasi-uduk.jpg"
+                            alt="Nasi Uduk"
+                          />
+                          <b>Nasi Uduk</b>
+                        </div>
+                      </td>
+                      <td>1 porsi</td>
+                      <td>
+                        Batam Centre
+                        <small>Batam · Rumah</small>
+                      </td>
+                      <td>11.00–13.00 WIB</td>
+                      <td><span class="badge green">Selesai</span></td>
+                      <td>
+                        <a
+                          class="delivery-row-link"
+                          href="jadwal-menu.html?langganan=2"
+                        >
+                          Lihat jadwal →
+                        </a>
+                      </td>
+                    </tr>
+                    <tr class="delivery-excluded">
+                      <td>
+                        <b>Dewi Lestari</b>
+                        <small>#BR-0003</small>
+                      </td>
+                      <td>Ayam Goreng</td>
+                      <td>—</td>
+                      <td>Batu Aji, Batam</td>
+                      <td>11.00–13.00 WIB</td>
+                      <td>
+                        <span class="badge">Dijeda</span>
+                        <small>Tidak dihitung</small>
+                      </td>
+                      <td>
+                        <a
+                          class="delivery-row-link"
+                          href="jadwal-menu.html?langganan=3"
+                        >
+                          Lihat jadwal →
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            <section
+              id="delivery-recap-panel"
+              role="tabpanel"
+              aria-labelledby="delivery-recap-tab"
+              hidden
+            >
+              <div class="panel-heading delivery-recap-heading">
+                <div>
+                  <h2>Kebutuhan menu hari ini</h2>
+                  <p id="recap-date-label">Senin, 2 November 2026</p>
+                </div>
+                <span class="badge" id="recap-menu-count">2 jenis menu</span>
+              </div>
+              <div class="delivery-rule-note">
+                <span>ⓘ</span>
+                <p>
+                  Hanya pengantaran aktif pada tanggal ini yang dihitung. Jadwal
+                  libur, dijeda, dan dibatalkan tidak masuk kebutuhan dapur.
+                </p>
+              </div>
+              <div class="table-scroll">
+                <table class="delivery-recap-table">
+                  <thead>
+                    <tr>
+                      <th>Menu</th>
+                      <th>Jumlah porsi</th>
+                      <th>Pelanggan</th>
+                    </tr>
+                  </thead>
+                  <tbody id="delivery-recap-body">
+                    <tr>
+                      <td>Ayam Goreng</td>
+                      <td><strong>1 porsi</strong></td>
+                      <td>Nadia Putri</td>
+                    </tr>
+                    <tr>
+                      <td>Nasi Uduk</td>
+                      <td><strong>1 porsi</strong></td>
+                      <td>Siti Aisyah</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td>Total porsi</td>
+                      <td id="recap-total-portions">2 porsi</td>
+                      <td id="recap-total-deliveries">2 pengantaran aktif</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <p class="delivery-excluded-note" id="recap-excluded-note">
+                1 jadwal dijeda tidak dihitung dalam rekap.
+              </p>
+            </section>
+            <div class="demo-note delivery-demo-note">
+              Pratinjau data contoh. Filter dan perpindahan tanggal hanya
+              mengubah tampilan; tidak ada data yang disimpan.
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div id="modal-root"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/admin-delivery.js"></script>
+  </body>
+</html>

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#290a04" />
+    <title>Ringkasan & Pembayaran · Bunda Rahma</title>
+    <link rel="icon" href="../assets/images/logo.png" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body class="customer">
+    <header class="site-header">
+      <nav class="nav wrap" aria-label="Navigasi utama">
+        <a class="brand" href="../pelanggan/index.html">
+          <img
+            src="../assets/images/logo.png"
+            alt="Logo kucing Catering Bunda Rahma"
+          />
+          <span>
+            CATERING
+            <br />
+            <b>BUNDA RAHMA</b>
+          </span>
+        </a>
+        <button
+          class="mobile-toggle"
+          aria-label="Buka navigasi"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <div class="navlinks">
+          <a href="index.html#tentang">Tentang</a>
+          <a class="" href="../pelanggan/menu.html">Menu</a>
+          <a class="" href="index.html#langganan">Langganan</a>
+          <a class="" href="index.html#ulasan">Ulasan</a>
+          <details class="account">
+            <summary class="btn">Akun</summary>
+            <div class="account-menu">
+              <small>Nadia Putri</small>
+              <a href="../pelanggan/riwayat.html">Riwayat pesanan</a>
+              <a href="../pelanggan/jadwal-menu.html">Jadwal Menu</a>
+              <a href="../publik/index.html" data-logout>Keluar</a>
+            </div>
+          </details>
+        </div>
+      </nav>
+    </header>
+    <main class="wrap schedule-page" id="schedule-payment">
+      <nav class="order-steps" aria-label="Tahapan pemesanan">
+        <span class="done">
+          <i>✓</i>
+          Pilih paket
+        </span>
+        <span class="done">
+          <i>✓</i>
+          Alamat & jadwal
+        </span>
+        <span class="done">
+          <i>✓</i>
+          Atur menu
+        </span>
+        <span class="current">
+          <i>4</i>
+          Pembayaran
+        </span>
+      </nav>
+      <div class="page-head">
+        <div class="eyebrow">LANGKAH TERAKHIR</div>
+        <h1>Tinjau langgananmu.</h1>
+        <p>
+          Paket dan pilihan menu sudah siap. Periksa ringkasannya sebelum
+          melanjutkan.
+        </p>
+      </div>
+      <div class="schedule-payment-grid">
+        <section class="panel">
+          <h2>Ringkasan langganan</h2>
+          <div class="summary-package">
+            <img
+              src="../assets/images/ayam-goreng.jpg"
+              alt="Contoh menu langganan"
+            />
+            <div>
+              <h3 id="payment-package">Paket 30 Day</h3>
+              <small id="payment-deliveries">30 kali pengantaran</small>
+            </div>
+          </div>
+          <div class="summary-line">
+            <span>Periode pengiriman</span>
+            <b id="payment-period">2 Nov–11 Des 2026</b>
+          </div>
+          <div class="summary-line">
+            <span>Jadwal</span>
+            <b id="payment-frequency">Senin–Jumat</b>
+          </div>
+          <div class="summary-line">
+            <span>Waktu</span>
+            <b id="payment-time">11.00–13.00 WIB</b>
+          </div>
+          <div class="schedule-payment-menu-head">
+            <h3>Contoh menu awal</h3>
+            <a id="edit-planned-menu" href="atur-menu.html">Ubah menu</a>
+          </div>
+          <div class="payment-menu-list" id="payment-menu-list">
+            <p>
+              Ayam Goreng · Rendang Sapi · Nasi Uduk · Sate Ayam · Rawon Ayam
+            </p>
+          </div>
+        </section>
+        <aside class="panel">
+          <h3>Pembayaran</h3>
+          <div class="summary-line">
+            <span>Harga normal</span>
+            <span id="payment-original">Rp 360.000</span>
+          </div>
+          <div class="summary-line">
+            <span>Diskon paket</span>
+            <span id="payment-discount">−Rp 35.000</span>
+          </div>
+          <div class="summary-line">
+            <span>Pengiriman</span>
+            <span class="accent">Gratis</span>
+          </div>
+          <div class="summary-line total">
+            <span>Total</span>
+            <span id="payment-total">Rp 325.000</span>
+          </div>
+          <div class="field">
+            <label for="schedule-payment-method">Metode pembayaran</label>
+            <select id="schedule-payment-method">
+              <option>Transfer bank</option>
+              <option>QRIS</option>
+              <option>Tunai</option>
+            </select>
+          </div>
+          <button class="btn wide" type="button" id="preview-schedule-success">
+            Lihat contoh pesanan selesai
+          </button>
+          <p class="schedule-muted-note">
+            Hanya pratinjau. Tidak ada pembayaran atau pesanan sungguhan.
+          </p>
+        </aside>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="wrap">
+        <span>© 2026 Catering Bunda Rahma</span>
+        <span>Enak, lezat, dan tepat waktu.</span>
+        <a href="../admin/login.html">Login admin ↗</a>
+      </div>
+    </footer>
+    <template
+      id="preview-schedule-success-dialog"
+      class="narrow"
+      title="Pratinjau pesanan selesai"
+    >
+      <div class="schedule-success">
+        <div class="schedule-success-mark">✓</div>
+        <h2>Menu siap menemani harimu.</h2>
+        <p>
+          Ini contoh tampilan setelah pemesanan. Pilihan menu berikutnya dapat
+          dilihat melalui Jadwal Menu di dropdown Akun.
+        </p>
+        <a class="btn wide" href="jadwal-menu.html">Lihat Jadwal Menu Saya</a>
+        <button class="btn secondary wide" type="button" data-close>
+          Tutup pratinjau
+        </button>
+      </div>
+    </template>
+    <div id="modal-root"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/schedule.js"></script>
+  </body>
+</html>

@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#290a04" />
+    <meta
+      name="description"
+      content="Tampilan Catering Bunda Rahma — menu harian, paket langganan, dan dashboard admin."
+    />
+    <title>Jadwal Menu Pelanggan · Bunda Rahma</title>
+    <link rel="icon" href="../assets/images/logo.png" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body class="admin">
+    <div class="admin-shell">
+      <div class="admin-overlay"></div>
+      <aside class="sidebar">
+        <a class="brand" href="../admin/index.html">
+          <img
+            src="../assets/images/logo.png"
+            alt="Logo kucing Catering Bunda Rahma"
+          />
+          <span>
+            CATERING
+            <br />
+            <b>BUNDA RAHMA</b>
+          </span>
+        </a>
+        <p class="sidebar-label">Menu utama</p>
+        <nav>
+          <a class="" href="../admin/index.html">
+            <span class="nav-icon">◫</span>
+            Dashboard
+          </a>
+          <a class="" href="../admin/pelanggan.html">
+            <span class="nav-icon">♙</span>
+            Kelola Pelanggan
+          </a>
+          <a class="" href="../admin/menu.html">
+            <span class="nav-icon">♧</span>
+            Kelola Menu
+          </a>
+          <a class="active" href="../admin/langganan.html">
+            <span class="nav-icon">▣</span>
+            Kelola Langganan
+          </a>
+          <a class="" href="../admin/paket.html">
+            <span class="nav-icon">▤</span>
+            Kelola Paket Langganan
+          </a>
+          <a class="" href="../admin/pengantaran.html">
+            <span class="nav-icon">▦</span>
+            Jadwal Pengantaran
+          </a>
+          <a class="" href="../admin/ulasan.html">
+            <span class="nav-icon">★</span>
+            Rating & Ulasan
+          </a>
+        </nav>
+        <div class="bottom">
+          <nav>
+            <a href="../publik/index.html">
+              <span class="nav-icon">↗</span>
+              Lihat website
+            </a>
+            <a href="../admin/login.html" data-logout>
+              <span class="nav-icon">⇥</span>
+              Keluar
+            </a>
+          </nav>
+          <small style="display: block; text-align: center; margin-top: 18px">
+            Bunda Rahma · Admin Panel
+          </small>
+        </div>
+      </aside>
+      <div class="admin-main">
+        <header class="admin-top">
+          <button
+            class="admin-mobile-toggle"
+            aria-label="Buka sidebar"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
+          <p>Selamat datang di panel Bunda Rahma</p>
+          <div class="admin-identity">
+            <span class="avatar">A</span>
+            <div>
+              <b>Administrator</b>
+              <small style="display: block">Pengelola catering</small>
+            </div>
+          </div>
+        </header>
+        <main class="admin-content">
+          <div id="customer-menu-page">
+            <div class="admin-heading">
+              <div>
+                <div class="eyebrow">LANGGANAN · PILIHAN PELANGGAN</div>
+                <h1>Jadwal Menu Pelanggan</h1>
+                <p>
+                  Periksa menu per tanggal tanpa mengubah pilihan pelanggan.
+                </p>
+              </div>
+              <a class="btn outline small" href="langganan.html">
+                ← Kelola Langganan
+              </a>
+            </div>
+            <section class="panel delivery-customer-card">
+              <div class="delivery-customer-avatar" id="customer-menu-avatar">
+                N
+              </div>
+              <div class="delivery-customer-identity">
+                <h2 id="customer-menu-name">Nadia Putri</h2>
+                <p>
+                  <span id="customer-menu-code">#BR-0001</span>
+                  ·
+                  <span id="customer-menu-package">Paket 30 Day</span>
+                </p>
+                <span class="badge green" id="customer-menu-status">Aktif</span>
+              </div>
+              <div class="delivery-customer-meta">
+                <small>ALAMAT PENGIRIMAN</small>
+                <strong id="customer-menu-address">Politeknik Batam</strong>
+                <span id="customer-menu-phone">0812 3456 7890</span>
+              </div>
+              <div class="delivery-customer-meta">
+                <small>JADWAL & PROGRES</small>
+                <strong id="customer-menu-frequency">
+                  Senin–Jumat · 11.00–13.00 WIB
+                </strong>
+                <span id="customer-menu-progress">
+                  7 dari 30 pengantaran selesai
+                </span>
+              </div>
+            </section>
+            <div class="delivery-rule-note">
+              <span>◉</span>
+              <p>
+                Ini adalah pilihan menu pelanggan. Halaman admin ini hanya untuk
+                melihat jadwal dan menyiapkan pengiriman.
+              </p>
+            </div>
+            <div class="panel-heading delivery-customer-week">
+              <div>
+                <h2>Menu per tanggal</h2>
+                <p id="customer-menu-week-label">2–8 November 2026</p>
+              </div>
+              <div class="schedule-week-controls">
+                <button
+                  type="button"
+                  class="btn outline small"
+                  id="customer-week-previous"
+                  aria-label="Minggu sebelumnya"
+                >
+                  ←
+                </button>
+                <span id="customer-menu-week-count">Minggu 1 dari 7</span>
+                <button
+                  type="button"
+                  class="btn outline small"
+                  id="customer-week-next"
+                  aria-label="Minggu berikutnya"
+                >
+                  →
+                </button>
+              </div>
+            </div>
+            <div class="table-scroll">
+              <table class="customer-menu-table">
+                <thead>
+                  <tr>
+                    <th>Tanggal</th>
+                    <th>Menu pilihan pelanggan</th>
+                    <th>Porsi</th>
+                    <th>Status</th>
+                    <th>Pengantaran</th>
+                  </tr>
+                </thead>
+                <tbody id="customer-menu-body">
+                  <tr>
+                    <td>Senin, 2 Nov 2026</td>
+                    <td>Ayam Goreng</td>
+                    <td>1 porsi</td>
+                    <td>Diproses</td>
+                    <td>
+                      <a href="pengantaran.html?tanggal=2026-11-02">
+                        Lihat pengantaran →
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="demo-note delivery-demo-note">
+              Contoh jadwal pelanggan. Tidak ada perubahan menu atau penyimpanan
+              data dari halaman ini.
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div id="modal-root"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/admin-delivery.js"></script>
+  </body>
+</html>

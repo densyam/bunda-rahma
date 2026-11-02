@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#290a04" />
+    <meta
+      name="description"
+      content="Tampilan Catering Bunda Rahma — menu harian, paket langganan, dan dashboard admin."
+    />
+    <title>Kelola Langganan · Bunda Rahma</title>
+    <link rel="icon" href="../assets/images/logo.png" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body class="admin">
+    <div class="admin-shell">
+      <div class="admin-overlay"></div>
+      <aside class="sidebar">
+        <a class="brand" href="../admin/index.html">
+          <img
+            src="../assets/images/logo.png"
+            alt="Logo kucing Catering Bunda Rahma"
+          />
+          <span>
+            CATERING
+            <br />
+            <b>BUNDA RAHMA</b>
+          </span>
+        </a>
+        <p class="sidebar-label">Menu utama</p>
+        <nav>
+          <a class="" href="../admin/index.html">
+            <span class="nav-icon">◫</span>
+            Dashboard
+          </a>
+          <a class="" href="../admin/pelanggan.html">
+            <span class="nav-icon">♙</span>
+            Kelola Pelanggan
+          </a>
+          <a class="" href="../admin/menu.html">
+            <span class="nav-icon">♧</span>
+            Kelola Menu
+          </a>
+          <a class="active" href="../admin/langganan.html">
+            <span class="nav-icon">▣</span>
+            Kelola Langganan
+          </a>
+          <a class="" href="../admin/paket.html">
+            <span class="nav-icon">▤</span>
+            Kelola Paket Langganan
+          </a>
+          <a class="" href="../admin/pengantaran.html">
+            <span class="nav-icon">▦</span>
+            Jadwal Pengantaran
+          </a>
+          <a class="" href="../admin/ulasan.html">
+            <span class="nav-icon">★</span>
+            Rating & Ulasan
+          </a>
+        </nav>
+        <div class="bottom">
+          <nav>
+            <a href="../publik/index.html">
+              <span class="nav-icon">↗</span>
+              Lihat website
+            </a>
+            <a href="../admin/login.html" data-logout>
+              <span class="nav-icon">⇥</span>
+              Keluar
+            </a>
+          </nav>
+          <small style="display: block; text-align: center; margin-top: 18px">
+            Bunda Rahma · Admin Panel
+          </small>
+        </div>
+      </aside>
+      <div class="admin-main">
+        <header class="admin-top">
+          <button
+            class="admin-mobile-toggle"
+            aria-label="Buka sidebar"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
+          <p>Selamat datang di panel Bunda Rahma</p>
+          <div class="admin-identity">
+            <span class="avatar">A</span>
+            <div>
+              <b>Administrator</b>
+              <small style="display: block">Pengelola catering</small>
+            </div>
+          </div>
+        </header>
+        <main class="admin-content">
+          <div class="admin-heading">
+            <div>
+              <h1>Kelola Langganan</h1>
+              <p>
+                Kelola langganan yang sedang berjalan untuk setiap pelanggan.
+              </p>
+            </div>
+            <button class="btn" data-add="subscriptions">
+              ＋ Tambah langganan
+            </button>
+          </div>
+          <div class="toolbar">
+            <input
+              type="search"
+              class="search"
+              id="admin-search"
+              placeholder="Cari pelanggan atau paket…"
+              aria-label="Cari data"
+            />
+            <select
+              class="inline-filter"
+              id="admin-filter"
+              aria-label="Filter status"
+            >
+              <option>Semua status</option>
+              <option>Aktif</option>
+              <option>Dijeda</option>
+              <option>Selesai</option>
+            </select>
+          </div>
+          <div id="subscription-list">
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Pelanggan</th>
+                    <th>Paket</th>
+                    <th>Mulai</th>
+                    <th>Progres</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <b>Nadia Putri</b>
+                      <small>#BR-0001</small>
+                    </td>
+                    <td>
+                      30 Day
+                      <small>Rp 325.000</small>
+                    </td>
+                    <td>2 Nov 2026</td>
+                    <td>
+                      7 / 30 pengantaran
+                      <div
+                        class="progress"
+                        style="width: 100px; height: 5px; margin-top: 7px"
+                      >
+                        <i style="width: 23.333333333333332%"></i>
+                      </div>
+                    </td>
+                    <td><span class="badge green">Aktif</span></td>
+                    <td>
+                      <div class="row-actions">
+                        <a
+                          class="delivery-row-link"
+                          href="jadwal-menu.html?langganan=1"
+                        >
+                          Lihat Jadwal Menu
+                        </a>
+                        <button data-edit="subscriptions:1">Kelola</button>
+                        <button class="danger" data-delete="subscriptions:1">
+                          Hapus
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Siti Aisyah</b>
+                      <small>#BR-0002</small>
+                    </td>
+                    <td>
+                      7 Day
+                      <small>Rp 79.000</small>
+                    </td>
+                    <td>2 Nov 2026</td>
+                    <td>
+                      3 / 7 pengantaran
+                      <div
+                        class="progress"
+                        style="width: 100px; height: 5px; margin-top: 7px"
+                      >
+                        <i style="width: 42.857142857142854%"></i>
+                      </div>
+                    </td>
+                    <td><span class="badge green">Aktif</span></td>
+                    <td>
+                      <div class="row-actions">
+                        <a
+                          class="delivery-row-link"
+                          href="jadwal-menu.html?langganan=2"
+                        >
+                          Lihat Jadwal Menu
+                        </a>
+                        <button data-edit="subscriptions:2">Kelola</button>
+                        <button class="danger" data-delete="subscriptions:2">
+                          Hapus
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Dewi Lestari</b>
+                      <small>#BR-0003</small>
+                    </td>
+                    <td>
+                      30 Day
+                      <small>Rp 325.000</small>
+                    </td>
+                    <td>1 Nov 2026</td>
+                    <td>
+                      12 / 30 pengantaran
+                      <div
+                        class="progress"
+                        style="width: 100px; height: 5px; margin-top: 7px"
+                      >
+                        <i style="width: 40%"></i>
+                      </div>
+                    </td>
+                    <td><span class="badge orange">Dijeda</span></td>
+                    <td>
+                      <div class="row-actions">
+                        <a
+                          class="delivery-row-link"
+                          href="jadwal-menu.html?langganan=3"
+                        >
+                          Lihat Jadwal Menu
+                        </a>
+                        <button data-edit="subscriptions:3">Kelola</button>
+                        <button class="danger" data-delete="subscriptions:3">
+                          Hapus
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Andi Saputra</b>
+                      <small>#BR-0004</small>
+                    </td>
+                    <td>
+                      1 Day
+                      <small>Rp 12.000</small>
+                    </td>
+                    <td>1 Nov 2026</td>
+                    <td>
+                      1 / 1 pengantaran
+                      <div
+                        class="progress"
+                        style="width: 100px; height: 5px; margin-top: 7px"
+                      >
+                        <i style="width: 100%"></i>
+                      </div>
+                    </td>
+                    <td><span class="badge green">Selesai</span></td>
+                    <td>
+                      <div class="row-actions">
+                        <a
+                          class="delivery-row-link"
+                          href="jadwal-menu.html?langganan=4"
+                        >
+                          Lihat Jadwal Menu
+                        </a>
+                        <button data-edit="subscriptions:4">Kelola</button>
+                        <button class="danger" data-delete="subscriptions:4">
+                          Hapus
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <small style="display: block; margin-top: 20px">
+            Data contoh tetap · Form tambah, edit, dan hapus hanya untuk
+            pratinjau.
+          </small>
+        </main>
+      </div>
+    </div>
+
+    <template id="preview-add-subscriptions" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Tambah langganan</h3>
+        <form id="edit-form" data-type="subscriptions" data-id="">
+          <div class="field">
+            <label for="customer">Pelanggan *</label>
+            <select id="customer" name="customer">
+              <option value="Nadia Putri">Nadia Putri</option>
+              <option value="Siti Aisyah">Siti Aisyah</option>
+              <option value="Dewi Lestari">Dewi Lestari</option>
+              <option value="Rizky Pratama">Rizky Pratama</option>
+              <option value="Andi Saputra">Andi Saputra</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="plan">Paket *</label>
+            <select id="plan" name="plan">
+              <option value="1 Day">1 Day</option>
+              <option value="7 Day">7 Day</option>
+              <option value="30 Day">30 Day</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="start">Mulai pengiriman *</label>
+            <input
+              type="date"
+              id="start"
+              name="start"
+              value="2026-11-02"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="done">Pengantaran selesai *</label>
+            <input type="number" id="done" name="done" value="0" required />
+          </div>
+          <div class="field">
+            <label for="status">Status *</label>
+            <select id="status" name="status">
+              <option value="Aktif">Aktif</option>
+              <option value="Dijeda">Dijeda</option>
+              <option value="Selesai">Selesai</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template
+      id="preview-edit-subscriptions-1"
+      class="narrow"
+      title="Pratinjau"
+    >
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Edit langganan</h3>
+        <form id="edit-form" data-type="subscriptions" data-id="1">
+          <div class="field">
+            <label for="customer">Pelanggan *</label>
+            <select id="customer" name="customer">
+              <option value="Nadia Putri" selected>Nadia Putri</option>
+              <option value="Siti Aisyah">Siti Aisyah</option>
+              <option value="Dewi Lestari">Dewi Lestari</option>
+              <option value="Rizky Pratama">Rizky Pratama</option>
+              <option value="Andi Saputra">Andi Saputra</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="plan">Paket *</label>
+            <select id="plan" name="plan">
+              <option value="1 Day">1 Day</option>
+              <option value="7 Day">7 Day</option>
+              <option value="30 Day" selected>30 Day</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="start">Mulai pengiriman *</label>
+            <input
+              type="date"
+              id="start"
+              name="start"
+              value="2026-11-02"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="done">Pengantaran selesai *</label>
+            <input type="number" id="done" name="done" value="7" required />
+          </div>
+          <div class="field">
+            <label for="status">Status *</label>
+            <select id="status" name="status">
+              <option value="Aktif" selected>Aktif</option>
+              <option value="Dijeda">Dijeda</option>
+              <option value="Selesai">Selesai</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template
+      id="preview-edit-subscriptions-2"
+      class="narrow"
+      title="Pratinjau"
+    >
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Edit langganan</h3>
+        <form id="edit-form" data-type="subscriptions" data-id="2">
+          <div class="field">
+            <label for="customer">Pelanggan *</label>
+            <select id="customer" name="customer">
+              <option value="Nadia Putri">Nadia Putri</option>
+              <option value="Siti Aisyah" selected>Siti Aisyah</option>
+              <option value="Dewi Lestari">Dewi Lestari</option>
+              <option value="Rizky Pratama">Rizky Pratama</option>
+              <option value="Andi Saputra">Andi Saputra</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="plan">Paket *</label>
+            <select id="plan" name="plan">
+              <option value="1 Day">1 Day</option>
+              <option value="7 Day" selected>7 Day</option>
+              <option value="30 Day">30 Day</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="start">Mulai pengiriman *</label>
+            <input
+              type="date"
+              id="start"
+              name="start"
+              value="2026-11-02"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="done">Pengantaran selesai *</label>
+            <input type="number" id="done" name="done" value="3" required />
+          </div>
+          <div class="field">
+            <label for="status">Status *</label>
+            <select id="status" name="status">
+              <option value="Aktif" selected>Aktif</option>
+              <option value="Dijeda">Dijeda</option>
+              <option value="Selesai">Selesai</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template
+      id="preview-edit-subscriptions-3"
+      class="narrow"
+      title="Pratinjau"
+    >
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Edit langganan</h3>
+        <form id="edit-form" data-type="subscriptions" data-id="3">
+          <div class="field">
+            <label for="customer">Pelanggan *</label>
+            <select id="customer" name="customer">
+              <option value="Nadia Putri">Nadia Putri</option>
+              <option value="Siti Aisyah">Siti Aisyah</option>
+              <option value="Dewi Lestari" selected>Dewi Lestari</option>
+              <option value="Rizky Pratama">Rizky Pratama</option>
+              <option value="Andi Saputra">Andi Saputra</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="plan">Paket *</label>
+            <select id="plan" name="plan">
+              <option value="1 Day">1 Day</option>
+              <option value="7 Day">7 Day</option>
+              <option value="30 Day" selected>30 Day</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="start">Mulai pengiriman *</label>
+            <input
+              type="date"
+              id="start"
+              name="start"
+              value="2026-11-01"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="done">Pengantaran selesai *</label>
+            <input type="number" id="done" name="done" value="12" required />
+          </div>
+          <div class="field">
+            <label for="status">Status *</label>
+            <select id="status" name="status">
+              <option value="Aktif">Aktif</option>
+              <option value="Dijeda" selected>Dijeda</option>
+              <option value="Selesai">Selesai</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template
+      id="preview-edit-subscriptions-4"
+      class="narrow"
+      title="Pratinjau"
+    >
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Edit langganan</h3>
+        <form id="edit-form" data-type="subscriptions" data-id="4">
+          <div class="field">
+            <label for="customer">Pelanggan *</label>
+            <select id="customer" name="customer">
+              <option value="Nadia Putri">Nadia Putri</option>
+              <option value="Siti Aisyah">Siti Aisyah</option>
+              <option value="Dewi Lestari">Dewi Lestari</option>
+              <option value="Rizky Pratama">Rizky Pratama</option>
+              <option value="Andi Saputra" selected>Andi Saputra</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="plan">Paket *</label>
+            <select id="plan" name="plan">
+              <option value="1 Day" selected>1 Day</option>
+              <option value="7 Day">7 Day</option>
+              <option value="30 Day">30 Day</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="start">Mulai pengiriman *</label>
+            <input
+              type="date"
+              id="start"
+              name="start"
+              value="2026-11-01"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="done">Pengantaran selesai *</label>
+            <input type="number" id="done" name="done" value="1" required />
+          </div>
+          <div class="field">
+            <label for="status">Status *</label>
+            <select id="status" name="status">
+              <option value="Aktif">Aktif</option>
+              <option value="Dijeda">Dijeda</option>
+              <option value="Selesai" selected>Selesai</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-delete" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Hapus data?</h3>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <div class="button-row">
+          <button class="btn secondary" data-close>Batal</button>
+          <button class="btn" data-preview-action>Hapus</button>
+        </div>
+      </div>
+    </template>
+    <template id="preview-login-required" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Lihat halaman pelanggan</h3>
+        <p>
+          Gunakan tombol sementara untuk membuka tampilan pelanggan atau admin.
+        </p>
+        <div class="preview-login-actions">
+          <a class="btn wide" href="../pelanggan/index.html">
+            Buka Halaman Pelanggan
+          </a>
+          <a class="btn secondary wide" href="../admin/index.html">
+            Buka Dashboard Admin
+          </a>
+        </div>
+      </div>
+    </template>
+    <template id="preview-forgot" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Lupa Password</h3>
+        <p>
+          Ini hanya tampilan. Kamu bisa membuka halaman pelanggan atau admin
+          melalui tombol sementara pada halaman login.
+        </p>
+      </div>
+    </template>
+    <div id="modal-root"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="../assets/js/app.js"></script>
+  </body>
+</html>

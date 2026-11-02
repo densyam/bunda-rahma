@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#290a04" />
+    <meta
+      name="description"
+      content="Tampilan Catering Bunda Rahma — menu harian, paket langganan, dan dashboard admin."
+    />
+    <title>Kelola Paket Langganan · Bunda Rahma</title>
+    <link rel="icon" href="../assets/images/logo.png" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body class="admin">
+    <div class="admin-shell">
+      <div class="admin-overlay"></div>
+      <aside class="sidebar">
+        <a class="brand" href="../admin/index.html">
+          <img
+            src="../assets/images/logo.png"
+            alt="Logo kucing Catering Bunda Rahma"
+          />
+          <span>
+            CATERING
+            <br />
+            <b>BUNDA RAHMA</b>
+          </span>
+        </a>
+        <p class="sidebar-label">Menu utama</p>
+        <nav>
+          <a class="" href="../admin/index.html">
+            <span class="nav-icon">◫</span>
+            Dashboard
+          </a>
+          <a class="" href="../admin/pelanggan.html">
+            <span class="nav-icon">♙</span>
+            Kelola Pelanggan
+          </a>
+          <a class="" href="../admin/menu.html">
+            <span class="nav-icon">♧</span>
+            Kelola Menu
+          </a>
+          <a class="" href="../admin/langganan.html">
+            <span class="nav-icon">▣</span>
+            Kelola Langganan
+          </a>
+          <a class="active" href="../admin/paket.html">
+            <span class="nav-icon">▤</span>
+            Kelola Paket Langganan
+          </a>
+          <a class="" href="../admin/pengantaran.html">
+            <span class="nav-icon">▦</span>
+            Jadwal Pengantaran
+          </a>
+          <a class="" href="../admin/ulasan.html">
+            <span class="nav-icon">★</span>
+            Rating & Ulasan
+          </a>
+        </nav>
+        <div class="bottom">
+          <nav>
+            <a href="../publik/index.html">
+              <span class="nav-icon">↗</span>
+              Lihat website
+            </a>
+            <a href="../admin/login.html" data-logout>
+              <span class="nav-icon">⇥</span>
+              Keluar
+            </a>
+          </nav>
+          <small style="display: block; text-align: center; margin-top: 18px">
+            Bunda Rahma · Admin Panel
+          </small>
+        </div>
+      </aside>
+      <div class="admin-main">
+        <header class="admin-top">
+          <button
+            class="admin-mobile-toggle"
+            aria-label="Buka sidebar"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
+          <p>Selamat datang di panel Bunda Rahma</p>
+          <div class="admin-identity">
+            <span class="avatar">A</span>
+            <div>
+              <b>Administrator</b>
+              <small style="display: block">Pengelola catering</small>
+            </div>
+          </div>
+        </header>
+        <main class="admin-content">
+          <div class="admin-heading">
+            <div>
+              <h1>Kelola Paket Langganan</h1>
+              <p>Atur pilihan paket 1 hari, 7 hari, dan 30 hari.</p>
+            </div>
+            <button class="btn" data-add="packages">＋ Tambah paket</button>
+          </div>
+          <div class="toolbar">
+            <input
+              type="search"
+              class="search"
+              id="admin-search"
+              placeholder="Cari paket…"
+              aria-label="Cari data"
+            />
+            <select
+              class="inline-filter"
+              id="admin-filter"
+              aria-label="Filter status"
+            >
+              <option>Semua status</option>
+              <option>Aktif</option>
+              <option>Nonaktif</option>
+            </select>
+          </div>
+          <div id="package-list">
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nama paket</th>
+                    <th>Durasi</th>
+                    <th>Harga normal</th>
+                    <th>Harga paket</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><b>1 Day</b></td>
+                    <td>1 hari</td>
+                    <td>Rp 12.000</td>
+                    <td>Rp 12.000</td>
+                    <td><span class="badge green">Aktif</span></td>
+                    <td>
+                      <div class="row-actions">
+                        <button data-edit="packages:1">Edit</button>
+                        <button class="danger" data-delete="packages:1">
+                          Hapus
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><b>7 Day</b></td>
+                    <td>7 hari</td>
+                    <td>Rp 84.000</td>
+                    <td>Rp 79.000</td>
+                    <td><span class="badge green">Aktif</span></td>
+                    <td>
+                      <div class="row-actions">
+                        <button data-edit="packages:2">Edit</button>
+                        <button class="danger" data-delete="packages:2">
+                          Hapus
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><b>30 Day</b></td>
+                    <td>30 hari</td>
+                    <td>Rp 360.000</td>
+                    <td>Rp 325.000</td>
+                    <td><span class="badge green">Aktif</span></td>
+                    <td>
+                      <div class="row-actions">
+                        <button data-edit="packages:3">Edit</button>
+                        <button class="danger" data-delete="packages:3">
+                          Hapus
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <small style="display: block; margin-top: 20px">
+            Data contoh tetap · Form tambah, edit, dan hapus hanya untuk
+            pratinjau.
+          </small>
+        </main>
+      </div>
+    </div>
+
+    <template id="preview-add-packages" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Tambah paket langganan</h3>
+        <form id="edit-form" data-type="packages" data-id="">
+          <div class="field">
+            <label for="name">Nama paket *</label>
+            <input type="text" id="name" name="name" value="" required />
+          </div>
+          <div class="field">
+            <label for="days">Durasi (hari) *</label>
+            <input type="number" id="days" name="days" value="1" required />
+          </div>
+          <div class="field">
+            <label for="original">Harga normal (Rp) *</label>
+            <input
+              type="number"
+              id="original"
+              name="original"
+              value="12000"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="price">Harga paket (Rp) *</label>
+            <input
+              type="number"
+              id="price"
+              name="price"
+              value="12000"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="status">Status *</label>
+            <select id="status" name="status">
+              <option value="Aktif">Aktif</option>
+              <option value="Nonaktif">Nonaktif</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-edit-packages-1" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Edit paket langganan</h3>
+        <form id="edit-form" data-type="packages" data-id="1">
+          <div class="field">
+            <label for="name">Nama paket *</label>
+            <input type="text" id="name" name="name" value="1 Day" required />
+          </div>
+          <div class="field">
+            <label for="days">Durasi (hari) *</label>
+            <input type="number" id="days" name="days" value="1" required />
+          </div>
+          <div class="field">
+            <label for="original">Harga normal (Rp) *</label>
+            <input
+              type="number"
+              id="original"
+              name="original"
+              value="12000"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="price">Harga paket (Rp) *</label>
+            <input
+              type="number"
+              id="price"
+              name="price"
+              value="12000"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="status">Status *</label>
+            <select id="status" name="status">
+              <option value="Aktif" selected>Aktif</option>
+              <option value="Nonaktif">Nonaktif</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-edit-packages-2" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Edit paket langganan</h3>
+        <form id="edit-form" data-type="packages" data-id="2">
+          <div class="field">
+            <label for="name">Nama paket *</label>
+            <input type="text" id="name" name="name" value="7 Day" required />
+          </div>
+          <div class="field">
+            <label for="days">Durasi (hari) *</label>
+            <input type="number" id="days" name="days" value="7" required />
+          </div>
+          <div class="field">
+            <label for="original">Harga normal (Rp) *</label>
+            <input
+              type="number"
+              id="original"
+              name="original"
+              value="84000"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="price">Harga paket (Rp) *</label>
+            <input
+              type="number"
+              id="price"
+              name="price"
+              value="79000"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="status">Status *</label>
+            <select id="status" name="status">
+              <option value="Aktif" selected>Aktif</option>
+              <option value="Nonaktif">Nonaktif</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-edit-packages-3" class="narrow" title="Pratinjau">
+      <div>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <h3>Edit paket langganan</h3>
+        <form id="edit-form" data-type="packages" data-id="3">
+          <div class="field">
+            <label for="name">Nama paket *</label>
+            <input type="text" id="name" name="name" value="30 Day" required />
+          </div>
+          <div class="field">
+            <label for="days">Durasi (hari) *</label>
+            <input type="number" id="days" name="days" value="30" required />
+          </div>
+          <div class="field">
+            <label for="original">Harga normal (Rp) *</label>
+            <input
+              type="number"
+              id="original"
+              name="original"
+              value="360000"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="price">Harga paket (Rp) *</label>
+            <input
+              type="number"
+              id="price"
+              name="price"
+              value="325000"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="status">Status *</label>
+            <select id="status" name="status">
+              <option value="Aktif" selected>Aktif</option>
+              <option value="Nonaktif">Nonaktif</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn secondary" data-close>
+              Batal
+            </button>
+            <button class="btn" type="submit" style="flex: 1">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="preview-delete" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Hapus data?</h3>
+        <p class="demo-note">
+          Pratinjau tampilan saja. Data tidak akan diubah atau disimpan.
+        </p>
+        <div class="button-row">
+          <button class="btn secondary" data-close>Batal</button>
+          <button class="btn" data-preview-action>Hapus</button>
+        </div>
+      </div>
+    </template>
+    <template id="preview-login-required" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Lihat halaman pelanggan</h3>
+        <p>
+          Gunakan tombol sementara untuk membuka tampilan pelanggan atau admin.
+        </p>
+        <div class="preview-login-actions">
+          <a class="btn wide" href="../pelanggan/index.html">
+            Buka Halaman Pelanggan
+          </a>
+          <a class="btn secondary wide" href="../admin/index.html">
+            Buka Dashboard Admin
+          </a>
+        </div>
+      </div>
+    </template>
+    <template id="preview-forgot" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Lupa Password</h3>
+        <p>
+          Ini hanya tampilan. Kamu bisa membuka halaman pelanggan atau admin
+          melalui tombol sementara pada halaman login.
+        </p>
+      </div>
+    </template>
+    <div id="modal-root"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="../assets/js/app.js"></script>
+  </body>
+</html>

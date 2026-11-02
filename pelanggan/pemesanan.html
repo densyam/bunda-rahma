@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#290a04" />
+    <meta
+      name="description"
+      content="Tampilan Catering Bunda Rahma — menu harian, paket langganan, dan dashboard admin."
+    />
+    <title>Pemesanan · Bunda Rahma</title>
+    <link rel="icon" href="../assets/images/logo.png" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body class="customer">
+    <header class="site-header">
+      <nav class="nav wrap" aria-label="Navigasi utama">
+        <a class="brand" href="../pelanggan/index.html">
+          <img
+            src="../assets/images/logo.png"
+            alt="Logo kucing Catering Bunda Rahma"
+          />
+          <span>
+            CATERING
+            <br />
+            <b>BUNDA RAHMA</b>
+          </span>
+        </a>
+        <button
+          class="mobile-toggle"
+          aria-label="Buka navigasi"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <div class="navlinks">
+          <a href="../pelanggan/index.html#tentang">Tentang</a>
+          <a class="" href="../pelanggan/menu.html">Menu</a>
+          <a class="" href="../pelanggan/index.html#langganan">Langganan</a>
+          <a class="" href="../pelanggan/index.html#ulasan">Ulasan</a>
+          <details class="account">
+            <summary class="btn">Akun</summary>
+            <div class="account-menu">
+              <small>Nadia Putri</small>
+              <a href="../pelanggan/riwayat.html">Riwayat pesanan</a>
+              <a href="../pelanggan/jadwal-menu.html">Jadwal Menu</a>
+              <a href="../publik/index.html" data-logout>Keluar</a>
+            </div>
+          </details>
+        </div>
+      </nav>
+    </header>
+    <main class="wrap">
+      <div class="page-head">
+        <h1>
+          Ke mana makananmu
+          <br />
+          diantar?
+        </h1>
+        <p>
+          Lengkapi alamat dan kontak penerima agar pesanan tiba tepat waktu.
+        </p>
+      </div>
+      <div class="checkout-grid">
+        <form class="panel" id="checkout-form">
+          <div class="form-title">
+            <h3>Detail penerima</h3>
+            <small>Pastikan nomor penerima aktif saat kurir mengantar.</small>
+          </div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="recipient">Nama penerima *</label>
+              <input
+                type="text"
+                id="recipient"
+                name="recipient"
+                value="Nadia Putri"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="phone">Nomor WhatsApp *</label>
+              <input type="tel" id="phone" name="phone" value="" required />
+            </div>
+          </div>
+          <div class="form-title" style="margin-top: 15px">
+            <h3>Alamat pengiriman</h3>
+            <small>Tulis alamat selengkap mungkin agar mudah ditemukan.</small>
+          </div>
+          <div class="chips" aria-label="Jenis alamat">
+            <button type="button" class="active" data-chip>⌂ Rumah</button>
+            <button type="button" data-chip>▤ Kantor</button>
+            <button type="button" data-chip>♧ Lainnya</button>
+          </div>
+          <div class="field">
+            <label for="address">Alamat lengkap *</label>
+            <input type="text" id="address" name="address" value="" required />
+          </div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="city">Kota / Kabupaten *</label>
+              <input type="text" id="city" name="city" value="Batam" required />
+            </div>
+            <div class="field">
+              <label for="postcode">Kode pos *</label>
+              <input
+                type="text"
+                id="postcode"
+                name="postcode"
+                value=""
+                required
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label for="notes">Patokan & detail lokasi</label>
+            <textarea
+              id="notes"
+              name="notes"
+              placeholder="Contoh: di samping Gedung Techno"
+            ></textarea>
+          </div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="start">Mulai pengiriman *</label>
+              <input
+                type="date"
+                id="start"
+                name="start"
+                value="2026-11-02"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="time">Waktu pengiriman</label>
+              <select id="time" name="time">
+                <option>11.00–13.00 WIB</option>
+                <option>17.00–19.00 WIB</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="frequency">Jadwal pengiriman</label>
+              <select id="frequency" name="frequency">
+                <option>Senin–Jumat</option>
+                <option>Senin–Sabtu</option>
+                <option>Setiap hari</option>
+              </select>
+            </div>
+          </div>
+        </form>
+        <aside>
+          <div class="panel">
+            <h3>Ringkasan pesanan</h3>
+            <div class="summary-package" id="checkout-package">
+              <img src="../assets/images/ayam-goreng.jpg" alt="Menu catering" />
+              <div>
+                <h3>30 Day</h3>
+                <small>30x makanan disiapkan sesuai jadwal pilihanmu.</small>
+                <br />
+                <a
+                  style="font-size: 11px; color: var(--orange)"
+                  href="../pelanggan/langganan.html"
+                >
+                  Ubah paket
+                </a>
+              </div>
+            </div>
+            <div class="summary-line">
+              <span>Harga normal</span>
+              <span id="checkout-original">Rp 360.000</span>
+            </div>
+            <div class="summary-line">
+              <span>Hemat paket</span>
+              <span class="accent" id="checkout-saving">−Rp 35.000</span>
+            </div>
+            <div class="summary-line">
+              <span>Biaya pengiriman</span>
+              <span class="accent">Gratis</span>
+            </div>
+            <div class="summary-line total">
+              <span>Total pembayaran</span>
+              <span id="checkout-total">Rp 325.000</span>
+            </div>
+            <button class="btn wide" type="button" id="continue-to-menus">
+              Lanjut pilih menu
+            </button>
+            <small style="display: block; text-align: center; margin-top: 14px">
+              Berikutnya: pilih pola menu mingguan untuk paketmu.
+            </small>
+          </div>
+          <div class="demo-note" style="margin-top: 18px">
+            Pratinjau tampilan saja. Data contoh bersifat tetap; tidak ada
+            perubahan atau penyimpanan data.
+          </div>
+        </aside>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="wrap">
+        <span>© 2026 Catering Bunda Rahma</span>
+        <span>Enak, lezat, dan tepat waktu.</span>
+        <a href="../admin/login.html">Login admin ↗</a>
+      </div>
+    </footer>
+    <template id="preview-login-required" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Lihat halaman pelanggan</h3>
+        <p>
+          Gunakan tombol sementara untuk membuka tampilan pelanggan atau admin.
+        </p>
+        <div class="preview-login-actions">
+          <a class="btn wide" href="../pelanggan/index.html">
+            Buka Halaman Pelanggan
+          </a>
+          <a class="btn secondary wide" href="../admin/index.html">
+            Buka Dashboard Admin
+          </a>
+        </div>
+      </div>
+    </template>
+    <template id="preview-forgot" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Lupa Password</h3>
+        <p>
+          Ini hanya tampilan. Kamu bisa membuka halaman pelanggan atau admin
+          melalui tombol sementara pada halaman login.
+        </p>
+      </div>
+    </template>
+    <div id="modal-root"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="../assets/js/app.js"></script>
+  </body>
+</html>

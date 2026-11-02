@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#290a04" />
+    <meta
+      name="description"
+      content="Tampilan Catering Bunda Rahma — menu harian, paket langganan, dan dashboard admin."
+    />
+    <title>Menu · Bunda Rahma</title>
+    <link rel="icon" href="../assets/images/logo.png" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body class="customer">
+    <header class="site-header">
+      <nav class="nav wrap" aria-label="Navigasi utama">
+        <a class="brand" href="../pelanggan/index.html">
+          <img
+            src="../assets/images/logo.png"
+            alt="Logo kucing Catering Bunda Rahma"
+          />
+          <span>
+            CATERING
+            <br />
+            <b>BUNDA RAHMA</b>
+          </span>
+        </a>
+        <button
+          class="mobile-toggle"
+          aria-label="Buka navigasi"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <div class="navlinks">
+          <a href="../pelanggan/index.html#tentang">Tentang</a>
+          <a class="active" href="../pelanggan/index.html#menu">Menu</a>
+          <a class="" href="../pelanggan/index.html#langganan">Langganan</a>
+          <a class="" href="../pelanggan/index.html#ulasan">Ulasan</a>
+          <details class="account">
+            <summary class="btn">Akun</summary>
+            <div class="account-menu">
+              <small>Nadia Putri</small>
+              <a href="../pelanggan/riwayat.html">Riwayat pesanan</a>
+              <a href="../pelanggan/jadwal-menu.html">Jadwal Menu</a>
+              <a href="../publik/index.html" data-logout>Keluar</a>
+            </div>
+          </details>
+        </div>
+      </nav>
+    </header>
+    <main class="wrap">
+      <div class="page-head">
+        <h1>Menu Yang Tersedia</h1>
+        <p>Kami menyediakan makanan dengan kualitas terbaik.</p>
+      </div>
+      <div class="toolbar">
+        <input
+          class="search"
+          id="menu-search"
+          type="search"
+          placeholder="Cari menu favoritmu…"
+          aria-label="Cari menu"
+        />
+        <a class="btn outline small" href="jadwal-menu.html">
+          Lihat Jadwal Menu Saya →
+        </a>
+      </div>
+      <div class="menu-grid" id="menu-list">
+        <article class="menu-card">
+          <button
+            class="image-button"
+            data-menu="1"
+            aria-label="Lihat detail Mie Ayam"
+          >
+            <img
+              src="../assets/images/mie-ayam.jpg"
+              alt="Mie Ayam"
+              loading="lazy"
+            />
+          </button>
+          <div class="menu-bottom">
+            <h3>Mie Ayam</h3>
+            <button class="btn small" data-menu="1">Detail</button>
+          </div>
+        </article>
+        <article class="menu-card">
+          <button
+            class="image-button"
+            data-menu="2"
+            aria-label="Lihat detail Rawon Ayam"
+          >
+            <img
+              src="../assets/images/rawon-ayam.jpg"
+              alt="Rawon Ayam"
+              loading="lazy"
+            />
+          </button>
+          <div class="menu-bottom">
+            <h3>Rawon Ayam</h3>
+            <button class="btn small" data-menu="2">Detail</button>
+          </div>
+        </article>
+        <article class="menu-card">
+          <button
+            class="image-button"
+            data-menu="3"
+            aria-label="Lihat detail Ayam Goreng"
+          >
+            <img
+              src="../assets/images/ayam-goreng.jpg"
+              alt="Ayam Goreng"
+              loading="lazy"
+            />
+          </button>
+          <div class="menu-bottom">
+            <h3>Ayam Goreng</h3>
+            <button class="btn small" data-menu="3">Detail</button>
+          </div>
+        </article>
+        <article class="menu-card">
+          <button
+            class="image-button"
+            data-menu="4"
+            aria-label="Lihat detail Nasi Uduk"
+          >
+            <img
+              src="../assets/images/nasi-uduk.jpg"
+              alt="Nasi Uduk"
+              loading="lazy"
+            />
+          </button>
+          <div class="menu-bottom">
+            <h3>Nasi Uduk</h3>
+            <button class="btn small" data-menu="4">Detail</button>
+          </div>
+        </article>
+        <article class="menu-card">
+          <button
+            class="image-button"
+            data-menu="5"
+            aria-label="Lihat detail Nasi Goreng"
+          >
+            <img
+              src="../assets/images/nasi-goreng.jpg"
+              alt="Nasi Goreng"
+              loading="lazy"
+            />
+          </button>
+          <div class="menu-bottom">
+            <h3>Nasi Goreng</h3>
+            <button class="btn small" data-menu="5">Detail</button>
+          </div>
+        </article>
+        <article class="menu-card">
+          <button
+            class="image-button"
+            data-menu="6"
+            aria-label="Lihat detail Rendang Sapi"
+          >
+            <img
+              src="../assets/images/rendang-sapi.jpg"
+              alt="Rendang Sapi"
+              loading="lazy"
+            />
+          </button>
+          <div class="menu-bottom">
+            <h3>Rendang Sapi</h3>
+            <button class="btn small" data-menu="6">Detail</button>
+          </div>
+        </article>
+        <article class="menu-card">
+          <button
+            class="image-button"
+            data-menu="7"
+            aria-label="Lihat detail Bakso"
+          >
+            <img src="../assets/images/bakso.jpg" alt="Bakso" loading="lazy" />
+          </button>
+          <div class="menu-bottom">
+            <h3>Bakso</h3>
+            <button class="btn small" data-menu="7">Detail</button>
+          </div>
+        </article>
+        <article class="menu-card">
+          <button
+            class="image-button"
+            data-menu="8"
+            aria-label="Lihat detail Sate Ayam"
+          >
+            <img
+              src="../assets/images/sate-ayam.jpg"
+              alt="Sate Ayam"
+              loading="lazy"
+            />
+          </button>
+          <div class="menu-bottom">
+            <h3>Sate Ayam</h3>
+            <button class="btn small" data-menu="8">Detail</button>
+          </div>
+        </article>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="wrap">
+        <span>© 2026 Catering Bunda Rahma</span>
+        <span>Enak, lezat, dan tepat waktu.</span>
+        <a href="../admin/login.html">Login admin ↗</a>
+      </div>
+    </footer>
+
+    <template id="preview-menu-1" class="" title="Pratinjau">
+      <div>
+        <div class="menu-detail">
+          <img src="../assets/images/mie-ayam.jpg" alt="Mie Ayam" />
+          <div>
+            <div class="eyebrow">Menu untuk besok</div>
+            <h2>Mie Ayam</h2>
+            <p>
+              Mie kenyal dengan topping ayam berbumbu, sawi segar, dan kuah
+              kaldu hangat.
+            </p>
+            <a class="btn wide" href="jadwal-menu.html">
+              Atur dari Jadwal Menu
+            </a>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="preview-menu-2" class="" title="Pratinjau">
+      <div>
+        <div class="menu-detail">
+          <img src="../assets/images/rawon-ayam.jpg" alt="Rawon Ayam" />
+          <div>
+            <div class="eyebrow">Menu untuk besok</div>
+            <h2>Rawon Ayam</h2>
+            <p>Kuah rawon kaya rempah dengan ayam lembut, taoge, dan sambal.</p>
+            <a class="btn wide" href="jadwal-menu.html">
+              Atur dari Jadwal Menu
+            </a>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="preview-menu-3" class="" title="Pratinjau">
+      <div>
+        <div class="menu-detail">
+          <img src="../assets/images/ayam-goreng.jpg" alt="Ayam Goreng" />
+          <div>
+            <div class="eyebrow">Menu untuk besok</div>
+            <h2>Ayam Goreng</h2>
+            <p>
+              Ayam goreng berbumbu rempah dengan serundeng renyah, disajikan
+              bersama nasi putih hangat, lalapan, dan sambal.
+            </p>
+            <a class="btn wide" href="jadwal-menu.html">
+              Atur dari Jadwal Menu
+            </a>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="preview-menu-4" class="" title="Pratinjau">
+      <div>
+        <div class="menu-detail">
+          <img src="../assets/images/nasi-uduk.jpg" alt="Nasi Uduk" />
+          <div>
+            <div class="eyebrow">Menu untuk besok</div>
+            <h2>Nasi Uduk</h2>
+            <p>
+              Nasi uduk gurih dengan ayam goreng, bihun, telur, tempe, dan
+              sambal.
+            </p>
+            <a class="btn wide" href="jadwal-menu.html">
+              Atur dari Jadwal Menu
+            </a>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="preview-menu-5" class="" title="Pratinjau">
+      <div>
+        <div class="menu-detail">
+          <img src="../assets/images/nasi-goreng.jpg" alt="Nasi Goreng" />
+          <div>
+            <div class="eyebrow">Menu untuk besok</div>
+            <h2>Nasi Goreng</h2>
+            <p>
+              Nasi goreng bumbu rumahan dengan telur mata sapi, sayuran, dan
+              acar segar.
+            </p>
+            <a class="btn wide" href="jadwal-menu.html">
+              Atur dari Jadwal Menu
+            </a>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="preview-menu-6" class="" title="Pratinjau">
+      <div>
+        <div class="menu-detail">
+          <img src="../assets/images/rendang-sapi.jpg" alt="Rendang Sapi" />
+          <div>
+            <div class="eyebrow">Menu untuk besok</div>
+            <h2>Rendang Sapi</h2>
+            <p>
+              Daging sapi empuk yang dimasak perlahan dengan santan dan rempah
+              pilihan.
+            </p>
+            <a class="btn wide" href="jadwal-menu.html">
+              Atur dari Jadwal Menu
+            </a>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="preview-menu-7" class="" title="Pratinjau">
+      <div>
+        <div class="menu-detail">
+          <img src="../assets/images/bakso.jpg" alt="Bakso" />
+          <div>
+            <div class="eyebrow">Menu untuk besok</div>
+            <h2>Bakso</h2>
+            <p>
+              Bakso sapi dengan mie, sayuran, dan kuah kaldu hangat yang gurih.
+            </p>
+            <a class="btn wide" href="jadwal-menu.html">
+              Atur dari Jadwal Menu
+            </a>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="preview-menu-8" class="" title="Pratinjau">
+      <div>
+        <div class="menu-detail">
+          <img src="../assets/images/sate-ayam.jpg" alt="Sate Ayam" />
+          <div>
+            <div class="eyebrow">Menu untuk besok</div>
+            <h2>Sate Ayam</h2>
+            <p>
+              Sate ayam bakar dengan bumbu kacang, kecap manis, dan irisan
+              bawang.
+            </p>
+            <a class="btn wide" href="jadwal-menu.html">
+              Atur dari Jadwal Menu
+            </a>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="preview-login-required" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Lihat halaman pelanggan</h3>
+        <p>
+          Gunakan tombol sementara untuk membuka tampilan pelanggan atau admin.
+        </p>
+        <div class="preview-login-actions">
+          <a class="btn wide" href="../pelanggan/index.html">
+            Buka Halaman Pelanggan
+          </a>
+          <a class="btn secondary wide" href="../admin/index.html">
+            Buka Dashboard Admin
+          </a>
+        </div>
+      </div>
+    </template>
+    <template id="preview-forgot" class="narrow" title="Pratinjau">
+      <div>
+        <h3>Lupa Password</h3>
+        <p>
+          Ini hanya tampilan. Kamu bisa membuka halaman pelanggan atau admin
+          melalui tombol sementara pada halaman login.
+        </p>
+      </div>
+    </template>
+    <div id="modal-root"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="../assets/js/app.js"></script>
+  </body>
+</html>
